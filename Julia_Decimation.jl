@@ -1,3 +1,4 @@
+
 # This algorithm is from https://github.com/JuliaGeometry/Meshes.jl/blob/master/test/simplification.jl by Julophm.
 # It uses a decimation approach.
 
