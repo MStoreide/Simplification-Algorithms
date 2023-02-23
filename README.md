@@ -5,19 +5,29 @@ Collection of Simplification Algorithms for testing for research paper
 
 ### Objects:
 
-U = Uniform\\
-NU = NonUniform\\
-S = Sphere\\
-A = Angeled\\
-R = Rugged\\
+U = Uniform\
+
+NU = NonUniform\
+
+S = Sphere\
+
+A = Angeled\
+
+R = Rugged\
+
 
 ### 
 
-D = Decimation\\
-VC = Vertex Clustering\\
-QEM = Quadric Error Metrics\\
-CFM = Coplanar Facets Merging\\
-EC = Edge Collapse\\
+D = Decimation\
+
+VC = Vertex Clustering\
+
+QEM = Quadric Error Metrics\
+
+CFM = Coplanar Facets Merging\
+
+EC = Edge Collapse\
+
 ## Algorithms
 
 **Decimation**
