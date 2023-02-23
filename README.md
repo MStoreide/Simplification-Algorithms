@@ -1,7 +1,7 @@
 # Simplification-Algorithms
 Collection of Simplification Algorithms for testing.
 
-Algorithms are picked from Open Source environments, and selected based on their common use as well as differences in approaches. 
+Algorithms are picked from Open Source environments, and selected based on their common use as well as differences in approaches.  
 
 ## Naming Conventions
 Files are named with abbreviations to limit the length. Full names are listed below.
