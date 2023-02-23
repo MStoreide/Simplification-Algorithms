@@ -1,15 +1,24 @@
 # Simplification-Algorithms
 Collection of Simplification Algorithms for testing for research paper
 
-Naming Conventions
+## Naming Conventions
 
-Objects:
+### Objects:
 
 U = Uniform
 NU = NonUniform
 S = Sphere
+A = Angeled
+R = Rugged
 
-# Algorithms
+### 
+
+D = Decimation
+VC = Vertex Clustering
+QEM = Quadric Error Metrics
+CFM = Coplanar Facets Merging
+EC = Edge Collapse
+## Algorithms
 
 **Decimation**
 Done in Open3D
@@ -54,25 +63,25 @@ Done in Blender utilizign
 
 **Meshlab License**
 > /****************************************************************************
- * MeshLab                                                           o o     *
- * A versatile mesh processing toolbox                             o     o   *
- *                                                                _   O  _   *
- * Copyright(C) 2005                                                \/)\/    *
- * Visual Computing Lab                                            /\/|      *
- * ISTI - Italian National Research Council                           |      *
- *                                                                    \      *
- * All rights reserved.																											 *
- * This program is free software; you can redistribute it and/or modify      *
- * it under the terms of the GNU General Public License as published by      *
- * the Free Software Foundation; either version 2 of the License, or         *
- * (at your option) any later version.                                       *
- *                                                                           *
- * This program is distributed in the hope that it will be useful,           *
- * but WITHOUT ANY WARRANTY; without even the implied warranty of            *
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the             *
- * GNU General Public License (http://www.gnu.org/licenses/gpl.txt)          *
- * for more details.                                                         *
- *                                                                           *
+  MeshLab                                                           o o     *
+  A versatile mesh processing toolbox                             o     o   *
+                                                                 _   O  _   *
+  Copyright(C) 2005                                                \/)\/    *
+  Visual Computing Lab                                            /\/|      *
+  ISTI - Italian National Research Council                           |      *
+                                                                     \      *
+  All rights reserved.																											 *
+  This program is free software; you can redistribute it and/or modify      *
+  it under the terms of the GNU General Public License as published by      *
+  the Free Software Foundation; either version 2 of the License, or         *
+  (at your option) any later version.                                       *
+                                                                            *
+  This program is distributed in the hope that it will be useful,           *
+  but WITHOUT ANY WARRANTY; without even the implied warranty of            *
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the             *
+  GNU General Public License (http://www.gnu.org/licenses/gpl.txt)          *
+  for more details.                                                         *
+                                                                            *
  ****************************************************************************/
 
  **Blender License**
