@@ -1,32 +1,37 @@
 # Simplification-Algorithms
-Collection of Simplification Algorithms for testing for research paper
+Collection of Simplification Algorithms for testing for research paper.
+
+Algorithms are picked from Open Source environments, and selected based on their common use as well as differences in approaches. 
 
 ## Naming Conventions
+Files are named with abbreviations to limit the length. Full names are listed below.
 
-### Objects:
+### Object Names:
 
-U = Uniform\
+U = Uniform
 
-NU = NonUniform\
+NU = NonUniform
 
-S = Sphere\
+S = Sphere
 
-A = Angeled\
+A = Angeled
 
-R = Rugged\
+R = Rugged
 
+NM = NonManifold 
+For some algorithms it was not necessary to have manifold geometry, so the repository contains both manifold and nonmanifold versions of some geometry. They are denoted NM.
 
-### 
+### Algorithm Names:
 
-D = Decimation\
+D = Decimation
 
-VC = Vertex Clustering\
+VC = Vertex Clustering
 
-QEM = Quadric Error Metrics\
+QEM = Quadric Error Metrics
 
-CFM = Coplanar Facets Merging\
+CFM = Coplanar Facets Merging
 
-EC = Edge Collapse\
+EC = Edge Collapse
 
 ## Algorithms
 
