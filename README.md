@@ -11,15 +11,15 @@ S = Sphere
 
 # Algorithms
 
-# Decimation
+# Decimation #
 Done in Open3D
 
-# Vertex Clustering
+# Vertex Clustering #
 Done in Open3D
 
-# Quadric Error Metrics
+# Quadric Error Metrics #
 
-# Coplanar Facets Merging
+# Coplanar Facets Merging #
 
-# Edge Collapse
+# Edge Collapse #
 Done in Blender utilizign
