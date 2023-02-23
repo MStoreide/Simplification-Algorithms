@@ -76,12 +76,20 @@ Done in Blender utilizign
 // IN THE SOFTWARE.
 // ----------------------------------------------------------------------------
 
+**Open3D Citation**
+>@article{Zhou2018,
+    author    = {Qian-Yi Zhou and Jaesik Park and Vladlen Koltun},
+    title     = {{Open3D}: {A} Modern Library for {3D} Data Processing},
+    journal   = {arXiv:1801.09847},
+    year      = {2018},
+}
+
 **Meshlab License**
 > /****************************************************************************
   MeshLab                                                           o o     *
   A versatile mesh processing toolbox                             o     o   *
                                                                  _   O  _   *
-  Copyright(C) 2005                                                \/)\/    *
+  Copyright(C) 2005 - 2021                                         \/)\/    *
   Visual Computing Lab                                            /\/|      *
   ISTI - Italian National Research Council                           |      *
                                                                      \      *
@@ -98,6 +106,25 @@ Done in Blender utilizign
   for more details.                                                         *
                                                                             *
  ****************************************************************************/
+ 
+ **Meshlab Citation**
+ >@software{meshlab,
+  author       = {Paolo Cignoni, Alessandro Muntoni, Guido Ranzuglia, Marco Callieri},
+  title        = {{MeshLab}},
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.5114037}
+}
+
+@inproceedings {LocalChapterEvents:ItalChap:ItalianChapConf2008:129-136,
+  booktitle = {Eurographics Italian Chapter Conference},
+  editor    = {Vittorio Scarano and Rosario De Chiara and Ugo Erra},
+  title     = {{MeshLab: an Open-Source Mesh Processing Tool}},
+  author    = {Cignoni, Paolo and Callieri, Marco and Corsini, Massimiliano and Dellepiane, Matteo and Ganovelli, Fabio and Ranzuglia, Guido},
+  year      = {2008},
+  publisher = {The Eurographics Association},
+  ISBN      = {978-3-905673-68-5},
+  DOI       = {10.2312/LocalChapterEvents/ItalChap/ItalianChapConf2008/129-136}
+}
 
  **Blender License**
 > The source code we develop at blender.org is default being licensed as GNU GPL Version 2 or later. 
