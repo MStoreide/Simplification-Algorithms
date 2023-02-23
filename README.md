@@ -1,5 +1,5 @@
 # Simplification-Algorithms
-Collection of Simplification Algorithms for testing for research paper.
+Collection of Simplification Algorithms for testing.
 
 Algorithms are picked from Open Source environments, and selected based on their common use as well as differences in approaches. 
 
@@ -130,4 +130,8 @@ Done in Blender utilizign
 > The source code we develop at blender.org is default being licensed as GNU GPL Version 2 or later. 
   Some modules we make are using more permissive licenses, though, for example, the Blender Cycles rendering engine is available as Apache 2.0.
   Blender also uses many modules or libraries from other projects. For example, Python uses the Python License; Bullet uses the Zlib License; Libmv uses the MIT License; and OSL, a BSD License. 
-  All the components that together make Blender are compatible under the newer GNU GPL Version 3 or later. That is also the license to use for any distribution of Blender binaries.
+  All the components that together make Blender are compatible under the newer GNU GPL Version 3 or later. That is also the license to use for any distribution of Blender binaries. 
+
+  # Contact
+
+  Markus Sebastian Bakken Storeide (markus.s.b.storeide@ntnun.no)
