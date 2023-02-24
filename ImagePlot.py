@@ -3,11 +3,12 @@ import os
 import random
 
 # Set the directory containing the images
-image_dir = "D:\Datasets\Paper - Simplification\Metro Snapshots\UNMEC"
+image_dir = r"D:\Datasets\Paper - Simplification\Metro Snapshots\UNMEC"
 
 # Get a list of all the image file names in the directory
 image_files = os.listdir(image_dir)
 
+#Fix this so that it gets them in the right order.
 # Select 16 random images from the directory
 selected_images = random.sample(image_files, 16)
 
