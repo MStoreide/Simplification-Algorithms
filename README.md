@@ -6,6 +6,8 @@ Algorithms are picked from Open Source environments, and selected based on their
 ## Naming Conventions
 Files are named with abbreviations to limit the length. Full names are listed below.
 
+Example: NonUniformNonManifoldEdgeCollapse.obj = NUNMEC.obj
+
 ### Object Names:
 
 U = Uniform
