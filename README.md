@@ -38,17 +38,17 @@ EC = Edge Collapse
 ## Algorithms
 
 **Decimation**
-Done in Open3D
+*Done in Open3D*
 
 **Vertex Clustering**
-Done in Open3D
+*Done in Open3D*
 
 **Quadric Error Metrics**
 
 **Coplanar Facets Merging**
 
 **Edge Collapse**
-Done in Blender utilizign
+*Done in Blender*
 
 
 **Open3D License**
