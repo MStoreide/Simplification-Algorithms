@@ -136,4 +136,4 @@ EC = Edge Collapse
 
   # Contact
 
-  Markus Sebastian Bakken Storeide (markus.s.b.storeide@ntnun.no)
+  Markus Sebastian Bakken Storeide (markus.s.b.storeide@ntnu.no)
