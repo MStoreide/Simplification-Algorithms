@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import os
 
 # Set the directory containing the images. Remember to change this if on a different computer. Could also connect to server. 
+#Can change this to taking it from the project folder instead. 
 image_dir = r"H:\Datasets\Paper - Simplification\Metro Snapshots\RNMEC"
 
 # List the image file names in the order you want to display them. 
