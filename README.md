@@ -50,6 +50,10 @@ EC = Edge Collapse
 **Edge Collapse**
 *Done in Blender*
 
+## Citations and Licenses
+
+This projects makes use of a lot of great open-source software, so please make sure to check these out. 
+
 
 **Open3D License**
 > // ----------------------------------------------------------------------------
