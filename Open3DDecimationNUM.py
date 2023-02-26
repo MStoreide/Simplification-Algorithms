@@ -1,4 +1,4 @@
-#Decimation of RM
+#Decimation of SM
 import open3d as o3d
 
 #Note that open3d requires version 3.10 of Python. 
@@ -126,7 +126,6 @@ o3d.io.write_triangle_mesh(r"D:\Datasets\Paper_Simplification\Decimation\NUMD\NU
 
 #Add a function that draws all the meshes side by side? Or at least gives images in a folder. 
 
-# Add C++ binding to call Metro information directly in this code? With invoke. 
-# Meshlab Hausdorff integration as well?
-# Metro has a CLI alternative, so perhaps viable. Might be easier to extract data as well. See if one can export directly to csv. 
+# NO! USE PYMESHLAB MODULE FOR IMPLEMENTING MESHLAB STUFF. Find the Hausdorff distance filter. 
+
 # Could then do all of the statistics here, with pandas, as well instead of excel.

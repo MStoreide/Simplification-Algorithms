@@ -5,6 +5,9 @@ Algorithms are picked from Open Source environments, and selected based on their
 
 Currently the impelemtation has a brute-force-esque approach with individual files for each object. No loops or iterations which would speed things up. Future plans include implementing this for ease of use. 
 
+Required Modules
+> open3d, pymeshlab, bpy
+
 ## Naming Conventions
 Files are named with abbreviations to limit the length. Full names are listed below.
 
