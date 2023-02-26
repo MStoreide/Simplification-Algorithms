@@ -3,8 +3,8 @@ import open3d as o3d
 
 #Note that open3d requires version 3.10 of Python. 
 
-#Can change this to taking it from the project folder instead. 
-NUNMbase = o3d.io.read_triangle_mesh(r"D:\Datasets\Paper_Simplification\Blender Topology Deform\NUM_Randomized.obj")
+#Can change this to taking it from the project folder instead. Mesh needs to be manifold and triangulated.
+NUNMbase = o3d.io.read_triangle_mesh(r"D:\Datasets\Paper_Simplification\Blender_Topology_Deform\NUM_Randomized.obj")
 NUNMbase.compute_vertex_normals()
 print(NUNMbase)
 
