@@ -5,5 +5,6 @@ To Do
 - Write script for Blender Edge Collapse algorithm with bpy.
 - Implement PyMeshLab feature for Hausdorff distance. 
 - Implement Pandas for statistics right here instead of excel. 
+- Finish ImagePlot.py script
 
 - Rewrite code as loops instead of brute forcing it for each object. 
