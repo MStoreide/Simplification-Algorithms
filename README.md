@@ -22,10 +22,15 @@ A = Angeled
 
 R = Rugged
 
+M = Manifold
+Manifold geometry means that . Meshes with this characteristic is denoted M after the object name.
+
 NM = NonManifold 
-For some algorithms it was not necessary to have manifold geometry, so the repository contains both manifold and nonmanifold versions of some geometry. They are denoted NM.
+For some algorithms it was not necessary to have manifold geometry, so the repository contains both manifold and nonmanifold versions of some geometry. They are denoted with NM after the object name.
+
 
 ### Algorithm Names:
+Specficiation of which simplification approach has been used is at the end of each object-name. They are denoted as follows:
 
 D = Decimation
 
