@@ -21,7 +21,7 @@ NU = NonUniform
 
 S = Sphere
 
-A = Angeled
+A = Angled
 
 R = Rugged
 
