@@ -1,6 +1,8 @@
 #Decimation of NUNM
 import open3d as o3d
 
+#Note that open3d requires version 3.10 of Python. 
+
 #Can change this to taking it from the project folder instead. 
 NUNMbase = o3d.io.read_triangle_mesh(r"H:\Datasets\Paper - Simplification\Blender Topology Deform\NonUniformRandomized.obj")
 NUNMbase.compute_vertex_normals()
@@ -35,8 +37,7 @@ o3d.io.write_triangle_mesh(r"D:\Datasets\Paper - Simplification\Decimation\NUNMD
 
 mesh_smp4 = NUNMbase.simplify_quadric_decimation(
     target_number_of_triangles=199179
-)
-print("Simplification Stage 4 (5.623%*4 reduction): ", mesh_smp4)
+) 
 o3d.io.write_triangle_mesh(r"D:\Datasets\Paper - Simplification\Decimation\NUNMD4.obj", mesh_smp4)
 
 
