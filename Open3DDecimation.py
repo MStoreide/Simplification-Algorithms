@@ -4,7 +4,7 @@ import open3d as o3d
 #Note that open3d requires version 3.10 of Python. 
 
 #Can change this to taking it from the project folder instead. 
-NUNMbase = o3d.io.read_triangle_mesh(r"D:\Datasets\Paper - Simplification\Blender Topology Deform\NonUniform_NM_Randomized.obj")
+NUNMbase = o3d.io.read_triangle_mesh(r"D:\Datasets\Paper - Simplification\Blender Topology Deform\NUM_Randomized.obj")
 NUNMbase.compute_vertex_normals()
 print(NUNMbase)
 
@@ -121,7 +121,7 @@ o3d.io.write_triangle_mesh(r"D:\Datasets\Paper - Simplification\Decimation\NUNMD
 mesh_smp16 = NUNMbase.simplify_quadric_decimation(
     target_number_of_triangles=25700
 )
-print("Simplification Stage 16 (5.623%*3 reduction): ", mesh_smp16)
+print("Simplification Stage 16 (5.623%*16 reduction): ", mesh_smp16)
 o3d.io.write_triangle_mesh(r"D:\Datasets\Paper - Simplification\Decimation\NUNMD\NUNMD16.obj", mesh_smp16)
 
 #Add a function that draws all the meshes side by side? Or at least gives images in a folder. 
