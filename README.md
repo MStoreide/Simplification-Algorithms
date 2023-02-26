@@ -26,10 +26,10 @@ A = Angled
 R = Rugged
 
 M = Manifold
-Manifold geometry means that . Meshes with this characteristic is denoted M after the object name.
+Manifold geometry in this context means that the mesh is watertight. Meshes with this characteristic is denoted M after the object name.
 
 NM = NonManifold 
-For some algorithms it was not necessary to have manifold geometry, so the repository contains both manifold and nonmanifold versions of some geometry. They are denoted with NM after the object name.
+For some algorithms it was not necessary to have manifold geometry, meaning that some geometries are surface meshes rather than watertight meshes. So the repository contains both manifold and nonmanifold versions of some geometry. They are denoted with NM after the object name.
 
 
 ### Algorithm Names:
