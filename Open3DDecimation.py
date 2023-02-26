@@ -113,7 +113,7 @@ o3d.io.write_triangle_mesh(r"D:\Datasets\Paper - Simplification\Decimation\NUNMD
 
 mesh_smp15 = NUNMbase.simplify_quadric_decimation(
     target_number_of_triangles=40092
-)
+)   
 print("Simplification Stage 15 (5.623%*15 reduction): ", mesh_smp15)
 o3d.io.write_triangle_mesh(r"D:\Datasets\Paper - Simplification\Decimation\NUNMD\NUNMD15.obj", mesh_smp15)
 
