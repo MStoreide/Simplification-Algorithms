@@ -1,0 +1,9 @@
+To Do
+- Get triangle counts for RM, SM, and UM Decimation.
+- Run RM, SM, and UM versions of Open3D Decimation.
+- Write Vertex Clustering script for Open3D. 
+- Write script for Blender Edge Collapse algorithm with bpy.
+- Implement PyMeshLab feature for Hausdorff distance. 
+- Implement Pandas for statistics right here instead of excel. 
+
+- Rewrite code as loops instead of brute forcing it for each object. 
