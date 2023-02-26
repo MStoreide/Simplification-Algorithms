@@ -1,4 +1,4 @@
-#Decimation of NUNM
+#Decimation of UM
 import open3d as o3d
 
 #Note that open3d requires version 3.10 of Python. 
