@@ -11,8 +11,7 @@ print(NUMbase)
 print("Before simplification:", NUMbase)
 #o3d.visualization.draw_geometries([NUNMbase]) This can be added later. Visualizing all stages.
 
-#Starting simplification, going through 16 stages. This should be written as a function or a loop to make the code cleaner and easier to use for other objects.
-#This comes later perhaps.
+#Starting simplification, going through 16 stages. 
 
 mesh_smp1 = NUMbase.simplify_quadric_decimation(
     target_number_of_triangles=242549
@@ -123,9 +122,3 @@ mesh_smp16 = NUMbase.simplify_quadric_decimation(
 )
 print("Simplification Stage 16 (5.623%*16 reduction): ", mesh_smp16)
 o3d.io.write_triangle_mesh(r"D:\Datasets\Paper_Simplification\Decimation\NUMD\NUMD16.obj", mesh_smp16)
-
-#Add a function that draws all the meshes side by side? Or at least gives images in a folder. 
-
-# NO! USE PYMESHLAB MODULE FOR IMPLEMENTING MESHLAB STUFF. Find the Hausdorff distance filter. 
-
-# Could then do all of the statistics here, with pandas, as well instead of excel.

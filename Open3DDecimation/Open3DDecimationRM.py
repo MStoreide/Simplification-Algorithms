@@ -11,9 +11,6 @@ print(RMbase)
 print("Before simplification:", RMbase)
 #o3d.visualization.draw_geometries([RMbase]) This can be added later. Visualizing all stages.
 
-#Starting simplification, going through 16 stages. This should be written as a function or a loop to make the code cleaner and easier to use for other objects.
-#This comes later perhaps.
-
 mesh_smp1 = RMbase.simplify_quadric_decimation(
     target_number_of_triangles=242549
 )
@@ -123,10 +120,3 @@ mesh_smp16 = RMbase.simplify_quadric_decimation(
 )
 print("Simplification Stage 16 (5.623%*16 reduction): ", mesh_smp16)
 o3d.io.write_triangle_mesh(r"D:\Datasets\Paper_Simplification\Decimation\RMD\RMD16.obj", mesh_smp16)
-
-#Add a function that draws all the meshes side by side? Or at least gives images in a folder. 
-
-# Add C++ binding to call Metro information directly in this code? With invoke. 
-# Meshlab Hausdorff integration as well?
-# Metro has a CLI alternative, so perhaps viable. Might be easier to extract data as well. See if one can export directly to csv. 
-# Could then do all of the statistics here, with pandas, as well instead of excel.
