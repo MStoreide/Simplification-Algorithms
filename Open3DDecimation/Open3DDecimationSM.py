@@ -1,5 +1,6 @@
-#Decimation of SM
+#Decimation of SM and Calculation of Hausdorff Distance
 import open3d as o3d
+import pymeshlab as pym
 
 #Note that open3d requires version 3.10 of Python. 
 
