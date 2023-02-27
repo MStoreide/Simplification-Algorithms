@@ -1,5 +1,6 @@
 import open3d as o3d
 
+#THis is the tutorial
 if __name__ == "__main__":
     bunny = o3d.data.BunnyMesh()
     mesh_in = o3d.io.read_triangle_mesh(bunny.path)
