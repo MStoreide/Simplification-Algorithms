@@ -15,9 +15,19 @@ if __name__ == "__main__":
     print("After Simplification with voxel size =", voxel_size, ":\n", mesh_smp)
     o3d.visualization.draw_geometries([mesh_smp])
 
-    voxel_size = max(mesh_in.get_max_bound() - mesh_in.get_min_bound()) / 16
-    mesh_smp = mesh_in.simplify_vertex_clustering(
+#Mine comes here
+if __name__ == "__main__":
+    NUM = o3d.io.read_triangle_mesh((r"D:\Datasets\Paper_Simplification\Baselines\NUM.obj"))
+    NUM.compute_vertex_normals()
+
+    print("Before Simplification: ", NUM)
+
+    voxel_size = max(NUM.get_max_bound() - NUM.get_min_bound()) / 32 #Fix the size here. 
+
+    #print(voxel_size) ????
+
+    mesh_smp = NUM.simplify_vertex_clustering(
         voxel_size=voxel_size,
         contraction=o3d.geometry.SimplificationContraction.Average)
-    print("After Simplification with voxel size =", voxel_size, ":\n", mesh_smp)
-    o3d.visualization.draw_geometries([mesh_smp])
+    print("After Simplification with voxel size =", voxel_size, ":\n", NUM)
+    o3d.io.write_triangle_mesh((r"D:\Datasets\Paper_Simplification\Vertex Clustering\NUMVC1.obj"))
