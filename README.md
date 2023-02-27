@@ -31,6 +31,9 @@ Manifold geometry in this context means that the mesh is watertight. Meshes with
 NM = NonManifold 
 For some algorithms it was not necessary to have manifold geometry, meaning that some geometries are surface meshes rather than watertight meshes. So the repository contains both manifold and nonmanifold versions of some geometry. They are denoted with NM after the object name.
 
+B = Baseline
+This is the HiPoly mesh used in comparisons. 
+
 
 ### Algorithm Names:
 Specficiation of which simplification approach has been used is at the end of each object-name. They are denoted as follows:
