@@ -22,7 +22,11 @@ if __name__ == "__main__":
 
     print("Before Simplification: ", NUM)
 
-    voxel_size = max(NUM.get_max_bound() - NUM.get_min_bound()) / 32 #Fix the size here. 
+#    print(NUM.get_max_bound) #To check what it is.
+
+#    print(NUM.get_min_bound) #To check what it is.
+
+    voxel_size = max(NUM.get_max_bound() - NUM.get_min_bound()) / 32 #Fix the size here. What is 32?
 
     #print(voxel_size) ????
 
@@ -31,3 +35,5 @@ if __name__ == "__main__":
         contraction=o3d.geometry.SimplificationContraction.Average)
     print("After Simplification with voxel size =", voxel_size, ":\n", NUM)
     o3d.io.write_triangle_mesh((r"D:\Datasets\Paper_Simplification\Vertex Clustering\NUMVC1.obj"))
+
+    #Then repeat for all the other meshes. Same as with D
