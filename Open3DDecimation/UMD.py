@@ -4,7 +4,7 @@ import open3d as o3d
 #Note that open3d requires version 3.10 of Python. 
 
 #Can change this to taking it from the project folder instead. Mesh needs to be manifold and triangulated.
-UMbase = o3d.io.read_triangle_mesh(r"D:\Datasets\Paper_Simplification\Blender_Topology_Deform\RMB.obj")
+UMbase = o3d.io.read_triangle_mesh(r"D:\Datasets\Paper_Simplification\Baselines\RMB.obj")
 UMbase.compute_vertex_normals()
 print(UMbase)
 
