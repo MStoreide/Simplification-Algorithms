@@ -1,16 +1,15 @@
-#Decimation of UM
 import open3d as o3d
 
 #Note that open3d requires version 3.10 of Python. 
 
 #Can change this to taking it from the project folder instead. Mesh needs to be manifold and triangulated.
-UMbase = o3d.io.read_triangle_mesh(r"D:\Datasets\Paper_Simplification\Baselines\RMB.obj")
+UMbase = o3d.io.read_triangle_mesh(r"D:\Datasets\Paper_Simplification\Baselines\UMB.obj")
 UMbase.compute_vertex_normals()
 print(UMbase)
 
 print("Before simplification:", UMbase)
 
-totaltris=227212
+totaltris=275808
 #o3d.visualization.draw_geometries([UMbase]) This can be added later. Visualizing all stages.
 
 #Starting simplification, going through 16 stages.
