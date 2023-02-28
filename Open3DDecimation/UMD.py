@@ -9,7 +9,7 @@ print(UMbase)
 
 print("Before simplification:", UMbase)
 
-totaltris=275808
+totaltris=277208
 
 #Starting simplification. Going through 16 stages, reducing by 5,625% at each stage. 
 
