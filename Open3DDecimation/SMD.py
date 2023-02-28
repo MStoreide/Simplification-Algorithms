@@ -1,10 +1,8 @@
-#Decimation of SM and Calculation of Hausdorff Distance
 import open3d as o3d
-import pymeshlab as pym
 
-#Note that open3d requires version 3.10 of Python. 
+# Note that open3d requires version 3.10 of Python. 
 
-#Can change this to taking it from the project folder instead. Mesh needs to be manifold and triangulated.
+# Mesh needs to be manifold and triangulated.
 SMbase = o3d.io.read_triangle_mesh(r"D:\Datasets\Paper_Simplification\Baselines\SMB.obj")
 SMbase.compute_vertex_normals()
 print(SMbase)
@@ -12,9 +10,8 @@ print(SMbase)
 totaltris=33620
 
 print("Before simplification:", SMbase)
-#o3d.visualization.draw_geometries([SMbase]) This can be added later. Visualizing all stages.
 
-#Starting simplification, going through 16 stages.
+#Starting simplification. Going through 16 stages, reducing by 5,625% at each stage. 
 
 mesh_smp1 = SMbase.simplify_quadric_decimation(
     target_number_of_triangles=(int(totaltris*0.94375))

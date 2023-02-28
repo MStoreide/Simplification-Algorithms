@@ -1,8 +1,8 @@
 import open3d as o3d
 
-#Note that open3d requires version 3.10 of Python. 
+# Note that open3d requires version 3.10 of Python. 
 
-#Can change this to taking it from the project folder instead. Mesh needs to be manifold and triangulated.
+# Mesh needs to be manifold and triangulated.
 NUMbase = o3d.io.read_triangle_mesh(r"D:\Datasets\Paper_Simplification\Baselines\NUMB.obj")
 NUMbase.compute_vertex_normals()
 print(NUMbase)
@@ -10,9 +10,8 @@ print(NUMbase)
 print("Before simplification:", NUMbase)
 
 totaltris=522328
-#o3d.visualization.draw_geometries([NUNMbase]) This can be added later. Visualizing all stages.
 
-#Starting simplification, going through 16 stages. 
+#Starting simplification. Going through 16 stages, reducing by 5,625% at each stage. 
 
 mesh_smp1 = NUMbase.simplify_quadric_decimation(
     target_number_of_triangles=(int(totaltris*0.94375))
