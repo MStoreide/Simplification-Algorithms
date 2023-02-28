@@ -1,7 +1,7 @@
 import inspect
 import open3d as o3d
 
-source_D = inspect.getsource(o3d.implify_quadric_decimation)
+source_D = inspect.getsource(o3d.simplify_quadric_decimation)
 print("Source Code for Decimation")
 print(source_D)
 
