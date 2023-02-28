@@ -4,7 +4,7 @@ import open3d as o3d
 #Note that open3d requires version 3.10 of Python. 
 
 #Can change this to taking it from the project folder instead. Mesh needs to be manifold and triangulated.
-NUMbase = o3d.io.read_triangle_mesh(r"D:\Datasets\Paper_Simplification\Blender_Topology_Deform\NUM_Randomized.obj")
+NUMbase = o3d.io.read_triangle_mesh(r"D:\Datasets\Paper_Simplification\Baserlines\NUMB.obj")
 NUMbase.compute_vertex_normals()
 print(NUMbase)
 
