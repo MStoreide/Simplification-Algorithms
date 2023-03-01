@@ -1,40 +1,29 @@
 import open3d as o3d
 
-#This is the tutorial
-# if __name__ == "__main__":
-#     bunny = o3d.data.BunnyMesh()
-#     mesh_in = o3d.io.read_triangle_mesh(bunny.path)
-#     mesh_in.compute_vertex_normals()
-
-#     print("Before Simplification: ", mesh_in)
-#     o3d.visualization.draw_geometries([mesh_in])
-
-#    voxel_size = max(mesh_in.get_max_bound() - mesh_in.get_min_bound()) / 32
-#     mesh_smp = mesh_in.simplify_vertex_clustering(
+#    voxel_size = max(NUMVC.get_max_bound() - NUMVC.get_min_bound()) / 32
+#     mesh_smp = NUMVC.simplify_vertex_clustering(
 #         voxel_size=voxel_size,
 #         contraction=o3d.geometry.SimplificationContraction.Average)
 #     print("After Simplification with voxel size =", voxel_size, ":\n", mesh_smp)
 #     o3d.visualization.draw_geometries([mesh_smp])
 
-#Mine comes here
-if __name__ == "__main__":
-    NUM = o3d.io.read_triangle_mesh((r"D:\Datasets\Paper_Simplification\Baselines\NUMb.obj"))
-    NUM.compute_vertex_normals()
+# bunny = o3d.data.BunnyMesh()
+NUMVC = o3d.io.read_triangle_mesh(r"G:\Markus' Folder\Business Backup\Datasets\Paper_Simplification\Baselines\NUMB.obj")
+NUMVC.compute_vertex_normals()
 
-    print("Before Simplification: ", NUM)
+print(
+    f'Input mesh has {len(NUMVC.vertices)} vertices and {len(NUMVC.triangles)} triangles'
+)
 
-    print(NUM.get_max_bound) #To check what it is.
+voxel_size = max(NUMVC.get_max_bound() - NUMVC.get_min_bound()) / 32 #This 32 number must be changed for each. 
+print(f'voxel_size = {voxel_size:e}')
+mesh_smp1 = NUMVC.simplify_vertex_clustering(
+    voxel_size=voxel_size,
+    contraction=o3d.geometry.SimplificationContraction.Average)
+print(
+    f'Simplified mesh has {len(mesh_smp.vertices)} vertices and {len(mesh_smp.triangles)} triangles'
+)
 
-#    print(NUM.get_min_bound) #To check what it is.
+o3d.io.write_triangle_mesh(r"G:\Markus' Folder\Business Backup\Datasets\Paper_Simplification\Vertex Clustering\NUMVC\NUMVC1.obj", mesh_smp1)
 
-    voxel_size = max(NUM.get_max_bound() - NUM.get_min_bound()) / 32 #Fix the size here. What is 32?
-
-    #print(voxel_size) ????
-
-    mesh_smp = NUM.simplify_vertex_clustering(
-        voxel_size=voxel_size,
-        contraction=o3d.geometry.SimplificationContraction.Average)
-    print("After Simplification with voxel size =", voxel_size, ":\n", NUM)
-    o3d.io.write_triangle_mesh((r"D:\Datasets\Paper_Simplification\Vertex Clustering\NUMVC1.obj"))
-
-    #Then repeat for all the other meshes. Same as with Decimation. 
+#Repeat 15 more times when it works.
