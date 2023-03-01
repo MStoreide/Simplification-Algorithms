@@ -7,7 +7,7 @@ Algorithms are picked from Open Source environments, and selected based on their
 Currently the implementation has a brute-force-esque approach with individual files for each object. No loops or iterations which would speed things up. Future plans include implementing this for ease of use. 
 
 Python Version
-> Python >= 3.10 for open3d (>= 3.8 for pymeshlab)
+> Python >= 3.10 for open3d (>= 3.7 for pymeshlab)
 
 Required Modules
 > open3d, pymeshlab, bpy, matplotlib
