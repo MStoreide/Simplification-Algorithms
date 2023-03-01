@@ -11,7 +11,7 @@ import pymeshlab
 #simp.1 = pym.load_new_mesh('D:\Datasets\Paper_Simplification\Decimation\SMD.obj') #This is with Decimation. Change to others.
 #Add all 16 meshes here.  
 
-#pym.get_hausdorff_distance():
+#pym.get_hausdorff_distance(
 #   baseline : int = 5050050 (Total triangles in THIS mesh) ?
 #   simp.1 = int = 40404040 (Total triangles in THIS mesh) ?
 #   savesample : bool = True
@@ -21,6 +21,7 @@ import pymeshlab
 #   sampleface : bool = True
 #   samplenum : int = (Total triangles in baseline)
 #   maxdist : int = 50%
+# )
 
 # ms.save_current_mesh? ???
 
