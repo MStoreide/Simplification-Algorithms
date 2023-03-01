@@ -37,4 +37,4 @@ if __name__ == "__main__":
     print("After Simplification with voxel size =", voxel_size, ":\n", NUM)
     o3d.io.write_triangle_mesh((r"D:\Datasets\Paper_Simplification\Vertex Clustering\NUMVC1.obj"))
 
-    #Then repeat for all the other meshes. Same as with D
+    #Then repeat for all the other meshes. Same as with Decimation. 

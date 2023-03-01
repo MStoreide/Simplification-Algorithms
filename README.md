@@ -1,17 +1,21 @@
 # Simplification-Algorithms
 Collection of Simplification Algorithms for testing.
+Purpose is to see how the different algorithms interact with primitive geometric shapes like spheres, angles, and different curvatures. Objective is to see if these can be charted in some way, in order to select the most appropriate one for different 3D objects.
 
 Algorithms are picked from Open Source environments, and selected based on their common use as well as differences in approaches.  
 
 Currently the implementation has a brute-force-esque approach with individual files for each object. No loops or iterations which would speed things up. Future plans include implementing this for ease of use. 
 
+Python Version
+> Python >= 3.10 for open3d (>= 3.8 for pymeshlab)
+
 Required Modules
-> open3d, pymeshlab, bpy
+> open3d, pymeshlab, bpy, matplotlib
 
 ## Naming Conventions
 Files are named with abbreviations to limit the length. Full names are listed below.
 
-Example: NonUniformNonManifoldEdgeCollapse.obj = NUNMEC.obj
+Example: NonUniformManifoldVertexClustering.obj = NUMVC.obj
 
 ### Object Names:
 
@@ -30,6 +34,7 @@ Manifold geometry in this context means that the mesh is watertight. Meshes with
 
 NM = NonManifold 
 For some algorithms it was not necessary to have manifold geometry, meaning that some geometries are surface meshes rather than watertight meshes. So the repository contains both manifold and nonmanifold versions of some geometry. They are denoted with NM after the object name.
+UPDATE: This is not used in the final version. 
 
 B = Baseline
 This is the HiPoly mesh used in comparisons. 
