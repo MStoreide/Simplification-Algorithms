@@ -3,7 +3,7 @@ import open3d as o3d
 # Note that open3d requires version 3.10 of Python. 
 
 # Mesh needs to be manifold and triangulated.
-NUMbase = o3d.io.read_triangle_mesh(r"D:\Datasets\Paper_Simplification\Baselines\NUMB.obj")
+NUMbase = o3d.io.read_triangle_mesh(r"D:\Datasets\Paper_Simplification\Baselines\NUMB.obj") #NUMB is the baseline mesh for comparison. 
 NUMbase.compute_vertex_normals()
 print(NUMbase)
 
