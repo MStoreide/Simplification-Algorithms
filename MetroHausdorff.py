@@ -1,32 +1,26 @@
-import pymeshlab
+import pymeshlab as pym
 
 #Hausdorff Distances for each mesh
+#Make sure the pymeshlab conda environment is activated (for Python 3.7)
 
 #Using pymeshlab, we apply the Huasdorff distance filter to all meshes compared to the original (SM_Randomized).
 #Sample faces at the total triangle count of the original mesh.
 
-#   ms = pymeshlab.MeshSet() # Check what this does. 
+ms = pym.MeshSet() # Creates a set where we can load our meshes into. ?
+pym.print_filter_list()
 
-#baseline = pym.load_new_mesh('D:\Datasets\Paper_Simplification\Baseline\SM.obj')
-#simp.1 = pym.load_new_mesh('D:\Datasets\Paper_Simplification\Decimation\SMD.obj') #This is with Decimation. Change to others.
+#baseline = pym.load_new_mesh('G:\Datasets\Paper_Simplification\Baseline\SM.obj')
+#simp1 = pym.load_new_mesh('G:\Datasets\Paper_Simplification\Decimation\SMD\SMD16.obj')
 #Add all 16 meshes here.  
 
-#pym.get_hausdorff_distance(
-#   baseline : int = 5050050 (Total triangles in THIS mesh) ?
-#   simp.1 = int = 40404040 (Total triangles in THIS mesh) ?
-#   savesample : bool = True
-#   samplevert : bool = False
-#   sampleedge : bool = False
-#   samplefauxedge : bool = False
-#   sampleface : bool = True
-#   samplenum : int = (Total triangles in baseline)
-#   maxdist : int = 50%
-# )
+#pym.get_hausdorff_distance(baseline, simp1)
+#savesample : bool = True
+#samplevert : bool = False
+#sampleedge : bool = False
+#samplefauxedge : bool = False
+#sampleface : bool = True
+#samplenum : int = (33620)
+#maxdist : int = 50
+
 
 # ms.save_current_mesh? ???
-
-
-pymeshlab.print_filter_list()
-
-
-
