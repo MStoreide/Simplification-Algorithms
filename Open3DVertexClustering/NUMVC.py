@@ -10,19 +10,19 @@ print(
 #def vc(fix)
 
 #1 is approximately dividing by 214
-voxel_size = max(NUMVC.get_max_bound() - NUMVC.get_min_bound()) / 390 
+voxel_size = max(NUMVC.get_max_bound() - NUMVC.get_min_bound()) / 800 
 print(f'voxel_size = {voxel_size:e}')                                
 mesh_smp1 = NUMVC.simplify_vertex_clustering(                        
     voxel_size=voxel_size,                   # Could do it manually like this. Still dont know what it means tho.                        
     contraction=o3d.geometry.SimplificationContraction.Average)
 print(
-    f'Simplification stage 5 has {len(mesh_smp1.vertices)} vertices and {len(mesh_smp1.triangles)} triangles'
+    f'Simplification stage 1 has {len(mesh_smp1.vertices)} vertices and {len(mesh_smp1.triangles)} triangles'
 )
 
 o3d.io.write_triangle_mesh(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\Vertex Clustering\NUMVC\NUMVC1.obj", mesh_smp1)
 
 #2 is approximately dividing by 214
-voxel_size = max(NUMVC.get_max_bound() - NUMVC.get_min_bound()) / 365 
+voxel_size = max(NUMVC.get_max_bound() - NUMVC.get_min_bound()) / 600 
 print(f'voxel_size = {voxel_size:e}')                                
 mesh_smp2 = NUMVC.simplify_vertex_clustering(                        
     voxel_size=voxel_size,                       
@@ -34,7 +34,7 @@ print(
 o3d.io.write_triangle_mesh(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\Vertex Clustering\NUMVC\NUMVC2.obj", mesh_smp2)
 
 #3 is approximately dividing by 214
-voxel_size = max(NUMVC.get_max_bound() - NUMVC.get_min_bound()) / 350 
+voxel_size = max(NUMVC.get_max_bound() - NUMVC.get_min_bound()) / 500 
 print(f'voxel_size = {voxel_size:e}')                                
 mesh_smp3 = NUMVC.simplify_vertex_clustering(                        
     voxel_size=voxel_size,                      
@@ -47,7 +47,7 @@ o3d.io.write_triangle_mesh(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Sim
 
 
 #4 is approximately dividing by 214
-voxel_size = max(NUMVC.get_max_bound() - NUMVC.get_min_bound()) / 335 
+voxel_size = max(NUMVC.get_max_bound() - NUMVC.get_min_bound()) / 404 
 print(f'voxel_size = {voxel_size:e}')                                
 mesh_smp4 = NUMVC.simplify_vertex_clustering(                        
     voxel_size=voxel_size,                                         
@@ -60,7 +60,7 @@ o3d.io.write_triangle_mesh(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Sim
 
 
 #5 is approximately dividing by 214
-voxel_size = max(NUMVC.get_max_bound() - NUMVC.get_min_bound()) / 310 
+voxel_size = max(NUMVC.get_max_bound() - NUMVC.get_min_bound()) / 350 
 print(f'voxel_size = {voxel_size:e}')                                
 mesh_smp5 = NUMVC.simplify_vertex_clustering(                        
     voxel_size=voxel_size,                       
@@ -73,7 +73,7 @@ o3d.io.write_triangle_mesh(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Sim
 
 
 #6 is approximately dividing by 214
-voxel_size = max(NUMVC.get_max_bound() - NUMVC.get_min_bound()) / 290 
+voxel_size = max(NUMVC.get_max_bound() - NUMVC.get_min_bound()) / 308 
 print(f'voxel_size = {voxel_size:e}')                                
 mesh_smp6 = NUMVC.simplify_vertex_clustering(                        
     voxel_size=voxel_size,                        
@@ -85,7 +85,7 @@ print(
 o3d.io.write_triangle_mesh(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\Vertex Clustering\NUMVC\NUMVC6.obj", mesh_smp6)
 
 #7 is approximately dividing by 214
-voxel_size = max(NUMVC.get_max_bound() - NUMVC.get_min_bound()) / 265 
+voxel_size = max(NUMVC.get_max_bound() - NUMVC.get_min_bound()) / 288 
 print(f'voxel_size = {voxel_size:e}')                                
 mesh_smp7 = NUMVC.simplify_vertex_clustering(                        
     voxel_size=voxel_size,                       
@@ -97,7 +97,7 @@ print(
 o3d.io.write_triangle_mesh(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\Vertex Clustering\NUMVC\NUMVC7.obj", mesh_smp7)
 
 #8 is approximately dividing by 214
-voxel_size = max(NUMVC.get_max_bound() - NUMVC.get_min_bound()) / 240 
+voxel_size = max(NUMVC.get_max_bound() - NUMVC.get_min_bound()) / 249 
 print(f'voxel_size = {voxel_size:e}')                                
 mesh_smp8 = NUMVC.simplify_vertex_clustering(                        
     voxel_size=voxel_size,                   # Could do it manually like this. Still dont know what it means tho.                        
