@@ -22,3 +22,5 @@ ms.load_new_mesh(r'G:\Markus_Folder\Business Backup\Datasets\Paper_Simplificatio
 
 
 # ms.save_current_mesh? ???
+
+#Remeber to set current mesh to each simplification stage at each stage. Duplicate the baseline and simplify ut. 
