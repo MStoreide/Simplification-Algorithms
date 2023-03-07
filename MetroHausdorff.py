@@ -16,11 +16,8 @@ ms.load_new_mesh(r'G:\Markus_Folder\Business Backup\Datasets\Paper_Simplificatio
 
 #pym.get_hausdorff_distance(baseline, simp1)
 #savesample : bool = True
-#samplevert : bool = False
-#sampleedge : bool = False
-#samplefauxedge : bool = False
 #sampleface : bool = True
-#samplenum : int = (33620)
+#samplenum : int = (33620) #Total triangles of baseline
 #maxdist : int = 50
 
 
