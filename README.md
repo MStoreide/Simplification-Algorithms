@@ -62,6 +62,7 @@ EC = Edge Collapse
 *Done in Open3D*
 
 **Quadric Error Metrics**
+*Done in Meshlab*
 
 **Coplanar Facets Merging**
 
