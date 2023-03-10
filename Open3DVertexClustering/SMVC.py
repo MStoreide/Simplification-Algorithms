@@ -8,7 +8,7 @@ print(
 )
 
 #1 is approximately dividing by 800
-voxel_size = max(SMVC.get_max_bound() - SMVC.get_min_bound()) / 800 
+voxel_size = max(SMVC.get_max_bound() - SMVC.get_min_bound()) / 75 
 print(f'voxel_size = {voxel_size:e}')                                
 mesh_smp1 = SMVC.simplify_vertex_clustering(                        
     voxel_size=voxel_size,                        
@@ -20,7 +20,7 @@ print(
 o3d.io.write_triangle_mesh(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\Vertex Clustering\SMVC\SMVC1.obj", mesh_smp1)
 
 #2 is approximately dividing by 600
-voxel_size = max(SMVC.get_max_bound() - SMVC.get_min_bound()) / 600 
+voxel_size = max(SMVC.get_max_bound() - SMVC.get_min_bound()) / 69 
 print(f'voxel_size = {voxel_size:e}')                                
 mesh_smp2 = SMVC.simplify_vertex_clustering(                        
     voxel_size=voxel_size,                       
@@ -32,7 +32,7 @@ print(
 o3d.io.write_triangle_mesh(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\Vertex Clustering\SMVC\SMVC2.obj", mesh_smp2)
 
 #3 is approximately dividing by 500
-voxel_size = max(SMVC.get_max_bound() - SMVC.get_min_bound()) / 500 
+voxel_size = max(SMVC.get_max_bound() - SMVC.get_min_bound()) / 66 
 print(f'voxel_size = {voxel_size:e}')                                
 mesh_smp3 = SMVC.simplify_vertex_clustering(                        
     voxel_size=voxel_size,                      
@@ -45,7 +45,7 @@ o3d.io.write_triangle_mesh(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Sim
 
 
 #4 is approximately dividing by 404
-voxel_size = max(SMVC.get_max_bound() - SMVC.get_min_bound()) / 404 
+voxel_size = max(SMVC.get_max_bound() - SMVC.get_min_bound()) / 62 
 print(f'voxel_size = {voxel_size:e}')                                
 mesh_smp4 = SMVC.simplify_vertex_clustering(                        
     voxel_size=voxel_size,                                         
@@ -58,7 +58,7 @@ o3d.io.write_triangle_mesh(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Sim
 
 
 #5 is approximately dividing by 350
-voxel_size = max(SMVC.get_max_bound() - SMVC.get_min_bound()) / 350 
+voxel_size = max(SMVC.get_max_bound() - SMVC.get_min_bound()) / 59 
 print(f'voxel_size = {voxel_size:e}')                                
 mesh_smp5 = SMVC.simplify_vertex_clustering(                        
     voxel_size=voxel_size,                       
@@ -71,7 +71,7 @@ o3d.io.write_triangle_mesh(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Sim
 
 
 #6 is approximately dividing by 308
-voxel_size = max(SMVC.get_max_bound() - SMVC.get_min_bound()) / 308 
+voxel_size = max(SMVC.get_max_bound() - SMVC.get_min_bound()) / 56
 print(f'voxel_size = {voxel_size:e}')                                
 mesh_smp6 = SMVC.simplify_vertex_clustering(                        
     voxel_size=voxel_size,                        
@@ -83,7 +83,7 @@ print(
 o3d.io.write_triangle_mesh(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\Vertex Clustering\SMVC\SMVC6.obj", mesh_smp6)
 
 #7 is approximately dividing by 288
-voxel_size = max(SMVC.get_max_bound() - SMVC.get_min_bound()) / 288 
+voxel_size = max(SMVC.get_max_bound() - SMVC.get_min_bound()) / 52 
 print(f'voxel_size = {voxel_size:e}')                                
 mesh_smp7 = SMVC.simplify_vertex_clustering(                        
     voxel_size=voxel_size,                       
@@ -95,7 +95,7 @@ print(
 o3d.io.write_triangle_mesh(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\Vertex Clustering\SMVC\SMVC7.obj", mesh_smp7)
 
 #8 is approximately dividing by 249
-voxel_size = max(SMVC.get_max_bound() - SMVC.get_min_bound()) / 249 
+voxel_size = max(SMVC.get_max_bound() - SMVC.get_min_bound()) / 50 
 print(f'voxel_size = {voxel_size:e}')                                
 mesh_smp8 = SMVC.simplify_vertex_clustering(                        
     voxel_size=voxel_size,                     
@@ -107,7 +107,7 @@ print(
 o3d.io.write_triangle_mesh(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\Vertex Clustering\SMVC\SMVC8.obj", mesh_smp8)
 
 #9 is approximately dividing by 228
-voxel_size = max(SMVC.get_max_bound() - SMVC.get_min_bound()) / 228 
+voxel_size = max(SMVC.get_max_bound() - SMVC.get_min_bound()) / 46 
 print(f'voxel_size = {voxel_size:e}')                                
 mesh_smp9 = SMVC.simplify_vertex_clustering(                        
     voxel_size=voxel_size,                        
@@ -120,7 +120,7 @@ o3d.io.write_triangle_mesh(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Sim
 
 
 #10 is approximately dividing by 214
-voxel_size = max(SMVC.get_max_bound() - SMVC.get_min_bound()) / 214 
+voxel_size = max(SMVC.get_max_bound() - SMVC.get_min_bound()) / 43 
 print(f'voxel_size = {voxel_size:e}')                                
 mesh_smp10 = SMVC.simplify_vertex_clustering(                        
     voxel_size=voxel_size,                                          
@@ -133,7 +133,7 @@ o3d.io.write_triangle_mesh(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Sim
 
 
 #11 is approximately dividing by 197
-voxel_size = max(SMVC.get_max_bound() - SMVC.get_min_bound()) / 197 
+voxel_size = max(SMVC.get_max_bound() - SMVC.get_min_bound()) / 40 
 print(f'voxel_size = {voxel_size:e}')                                
 mesh_smp11 = SMVC.simplify_vertex_clustering(                        
     voxel_size=voxel_size,                                          
@@ -146,7 +146,7 @@ o3d.io.write_triangle_mesh(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Sim
 
 
 #12 is approximately dividing by 183
-voxel_size = max(SMVC.get_max_bound() - SMVC.get_min_bound()) / 183 
+voxel_size = max(SMVC.get_max_bound() - SMVC.get_min_bound()) / 35 
 print(f'voxel_size = {voxel_size:e}')                                
 mesh_smp12 = SMVC.simplify_vertex_clustering(                        
     voxel_size=voxel_size,                                          
@@ -159,7 +159,7 @@ o3d.io.write_triangle_mesh(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Sim
 
 
 #13 is approximately dividing by 170
-voxel_size = max(SMVC.get_max_bound() - SMVC.get_min_bound()) / 170 
+voxel_size = max(SMVC.get_max_bound() - SMVC.get_min_bound()) / 33 
 print(f'voxel_size = {voxel_size:e}')                                
 mesh_smp13 = SMVC.simplify_vertex_clustering(                        
     voxel_size=voxel_size,                                          
@@ -171,7 +171,7 @@ print(
 o3d.io.write_triangle_mesh(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\Vertex Clustering\SMVC\SMVC13.obj", mesh_smp13)
 
 #14 is approximately dividing by 155
-voxel_size = max(SMVC.get_max_bound() - SMVC.get_min_bound()) / 155
+voxel_size = max(SMVC.get_max_bound() - SMVC.get_min_bound()) / 29
 print(f'voxel_size = {voxel_size:e}')                                
 mesh_smp14 = SMVC.simplify_vertex_clustering(                        
     voxel_size=voxel_size,                                          
@@ -183,7 +183,7 @@ print(
 o3d.io.write_triangle_mesh(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\Vertex Clustering\SMVC\SMVC14.obj", mesh_smp14)
 
 #15 is approximately dividing by 139
-voxel_size = max(SMVC.get_max_bound() - SMVC.get_min_bound()) / 139 
+voxel_size = max(SMVC.get_max_bound() - SMVC.get_min_bound()) / 24 
 print(f'voxel_size = {voxel_size:e}')                                
 mesh_smp15 = SMVC.simplify_vertex_clustering(                        
     voxel_size=voxel_size,                                          
@@ -197,7 +197,7 @@ o3d.io.write_triangle_mesh(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Sim
 
 
 #16 is approximately dividing by 111
-voxel_size = max(SMVC.get_max_bound() - SMVC.get_min_bound()) / 111
+voxel_size = max(SMVC.get_max_bound() - SMVC.get_min_bound()) / 20
 print(f'voxel_size = {voxel_size:e}')
 mesh_smp16 = SMVC.simplify_vertex_clustering(
     voxel_size=voxel_size,
@@ -208,14 +208,4 @@ print(
 
 o3d.io.write_triangle_mesh(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\Vertex Clustering\SMVC\SMVC16.obj", mesh_smp16)
 
-#Function version 
-#def vertex.clustering(mesh):
-#    mesh = o3d.io.read_triangle_mesh()
-#    voxel_size = max(mesh.get_max_bound() - mesh.get_min_bound()) / 111 
-#    print(f'voxel_size = {voxel_size:e}')                                
-#    mesh_smp = mesh.simplify_vertex_clustering(                        
-#    voxel_size=voxel_size,                                           
-#    contraction=o3d.geometry.SimplificationContraction.Average)      
-#    print(
-#    f'Simplification stage 16 has {len(mesh_smp.vertices)} vertices and {len(mesh_smp.triangles)} triangles')
-#    o3d.io.write_triangle_mesh(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\Vertex Clustering\SMVC\SMVC16.obj", mesh_smp)
+print("Simplification Finished")
