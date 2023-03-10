@@ -82,8 +82,9 @@ print(
 
 o3d.io.write_triangle_mesh(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\Vertex Clustering\RMVC\RMVC6.obj", mesh_smp6)
 
+
 #7 is approximately dividing by 288
-voxel_size = max(RMVC.get_max_bound() - RMVC.get_min_bound()) / 288 
+voxel_size = max(RMVC.get_max_bound() - RMVC.get_min_bound()) / 337
 print(f'voxel_size = {voxel_size:e}')                                
 mesh_smp7 = RMVC.simplify_vertex_clustering(                        
     voxel_size=voxel_size,                       
@@ -95,7 +96,7 @@ print(
 o3d.io.write_triangle_mesh(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\Vertex Clustering\RMVC\RMVC7.obj", mesh_smp7)
 
 #8 is approximately dividing by 249
-voxel_size = max(RMVC.get_max_bound() - RMVC.get_min_bound()) / 249 
+voxel_size = max(RMVC.get_max_bound() - RMVC.get_min_bound()) / 313 
 print(f'voxel_size = {voxel_size:e}')                                
 mesh_smp8 = RMVC.simplify_vertex_clustering(                        
     voxel_size=voxel_size,                     
@@ -106,8 +107,10 @@ print(
 
 o3d.io.write_triangle_mesh(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\Vertex Clustering\RMVC\RMVC8.obj", mesh_smp8)
 
+quit()
+
 #9 is approximately dividing by 228
-voxel_size = max(RMVC.get_max_bound() - RMVC.get_min_bound()) / 228 
+voxel_size = max(RMVC.get_max_bound() - RMVC.get_min_bound()) / 289 
 print(f'voxel_size = {voxel_size:e}')                                
 mesh_smp9 = RMVC.simplify_vertex_clustering(                        
     voxel_size=voxel_size,                        
@@ -120,7 +123,7 @@ o3d.io.write_triangle_mesh(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Sim
 
 
 #10 is approximately dividing by 214
-voxel_size = max(RMVC.get_max_bound() - RMVC.get_min_bound()) / 214 
+voxel_size = max(RMVC.get_max_bound() - RMVC.get_min_bound()) / 267 
 print(f'voxel_size = {voxel_size:e}')                                
 mesh_smp10 = RMVC.simplify_vertex_clustering(                        
     voxel_size=voxel_size,                                          
