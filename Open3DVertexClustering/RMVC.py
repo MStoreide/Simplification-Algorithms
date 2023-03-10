@@ -131,9 +131,8 @@ print(
 
 o3d.io.write_triangle_mesh(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\Vertex Clustering\RMVC\RMVC10.obj", mesh_smp10)
 
-
 #11 is approximately dividing by 197
-voxel_size = max(RMVC.get_max_bound() - RMVC.get_min_bound()) / 197 
+voxel_size = max(RMVC.get_max_bound() - RMVC.get_min_bound()) / 245 
 print(f'voxel_size = {voxel_size:e}')                                
 mesh_smp11 = RMVC.simplify_vertex_clustering(                        
     voxel_size=voxel_size,                                          
@@ -146,7 +145,7 @@ o3d.io.write_triangle_mesh(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Sim
 
 
 #12 is approximately dividing by 183
-voxel_size = max(RMVC.get_max_bound() - RMVC.get_min_bound()) / 183 
+voxel_size = max(RMVC.get_max_bound() - RMVC.get_min_bound()) / 223 
 print(f'voxel_size = {voxel_size:e}')                                
 mesh_smp12 = RMVC.simplify_vertex_clustering(                        
     voxel_size=voxel_size,                                          
@@ -157,9 +156,8 @@ print(
 
 o3d.io.write_triangle_mesh(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\Vertex Clustering\RMVC\RMVC12.obj", mesh_smp12)
 
-
 #13 is approximately dividing by 170
-voxel_size = max(RMVC.get_max_bound() - RMVC.get_min_bound()) / 170 
+voxel_size = max(RMVC.get_max_bound() - RMVC.get_min_bound()) / 201 
 print(f'voxel_size = {voxel_size:e}')                                
 mesh_smp13 = RMVC.simplify_vertex_clustering(                        
     voxel_size=voxel_size,                                          
@@ -171,7 +169,7 @@ print(
 o3d.io.write_triangle_mesh(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\Vertex Clustering\RMVC\RMVC13.obj", mesh_smp13)
 
 #14 is approximately dividing by 155
-voxel_size = max(RMVC.get_max_bound() - RMVC.get_min_bound()) / 155
+voxel_size = max(RMVC.get_max_bound() - RMVC.get_min_bound()) / 176
 print(f'voxel_size = {voxel_size:e}')                                
 mesh_smp14 = RMVC.simplify_vertex_clustering(                        
     voxel_size=voxel_size,                                          
@@ -183,7 +181,7 @@ print(
 o3d.io.write_triangle_mesh(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\Vertex Clustering\RMVC\RMVC14.obj", mesh_smp14)
 
 #15 is approximately dividing by 139
-voxel_size = max(RMVC.get_max_bound() - RMVC.get_min_bound()) / 139 
+voxel_size = max(RMVC.get_max_bound() - RMVC.get_min_bound()) / 149 
 print(f'voxel_size = {voxel_size:e}')                                
 mesh_smp15 = RMVC.simplify_vertex_clustering(                        
     voxel_size=voxel_size,                                          
@@ -195,9 +193,8 @@ print(
 o3d.io.write_triangle_mesh(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\Vertex Clustering\RMVC\RMVC15.obj", mesh_smp15)
 
 
-
 #16 is approximately dividing by 111
-voxel_size = max(RMVC.get_max_bound() - RMVC.get_min_bound()) / 111
+voxel_size = max(RMVC.get_max_bound() - RMVC.get_min_bound()) / 119
 print(f'voxel_size = {voxel_size:e}')
 mesh_smp16 = RMVC.simplify_vertex_clustering(
     voxel_size=voxel_size,
@@ -207,15 +204,3 @@ print(
 )
 
 o3d.io.write_triangle_mesh(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\Vertex Clustering\RMVC\RMVC16.obj", mesh_smp16)
-
-#Function version 
-#def vertex.clustering(mesh):
-#    mesh = o3d.io.read_triangle_mesh()
-#    voxel_size = max(mesh.get_max_bound() - mesh.get_min_bound()) / 111 
-#    print(f'voxel_size = {voxel_size:e}')                                
-#    mesh_smp = mesh.simplify_vertex_clustering(                        
-#    voxel_size=voxel_size,                                           
-#    contraction=o3d.geometry.SimplificationContraction.Average)      
-#    print(
-#    f'Simplification stage 16 has {len(mesh_smp.vertices)} vertices and {len(mesh_smp.triangles)} triangles')
-#    o3d.io.write_triangle_mesh(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\Vertex Clustering\RMVC\RMVC16.obj", mesh_smp)
