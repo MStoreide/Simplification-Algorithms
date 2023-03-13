@@ -1,8 +1,8 @@
 To Do
-- Create virtual environments for each script. Py 3.10 for Open3D, 3.7 for PyMeshLab
-- Get triangle counts for RM, SM, and UM Decimation.
-- Run RM, SM, and UM versions of Open3D Decimation.
-- Write Vertex Clustering script for Open3D. 
+- Create virtual environments for each script. Py 3.10 for Open3D, 3.7 for PyMeshLab ✔
+- Get triangle counts for RM, SM, and UM Decimation. ✔
+- Run RM, SM, and UM versions of Open3D Decimation. ✔
+- Write Vertex Clustering script for Open3D. ✔
 - Write script for Blender Edge Collapse algorithm with bpy.
 - Implement PyMeshLab feature for Hausdorff distance. 
 - Implement Pandas for statistics right here instead of excel. 
