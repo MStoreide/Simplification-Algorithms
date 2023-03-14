@@ -23,11 +23,27 @@ import  matplotlib as plt
 #copyfile = os.rename(objFile, base + "Copy.obj")
 #  os.rename(objFile, base + ".txt")
 
-objArray = np.loadtxt(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\OBJ Arrays\SMEC16.txt", skiprows = (4), max_rows=(1687), usecols=(1,2,3)) #1687 are all the vertices. Code to only go this far, Index 0 = v
-objDF = pd.DataFrame(objArray, columns = ['X','Y','Z'])
+# Baseline object
+
+objBaseArray = np.loadtxt(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\OBJ Arrays\SMB.txt", skiprows = (4), max_rows=(16816), usecols=(1,2,3))
+objBaseDF = pd.DataFrame(objBaseArray, columns=['X', 'Y', 'Z'])
+
+print(f"Base OBJ has {len(objBaseArray)} vertices")
+
+objBaseDF['X'].mean
+
+#Simplified
+
+objSimpArray = np.loadtxt(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\OBJ Arrays\SMEC16.txt", skiprows = (4), max_rows=(1687), usecols=(1,2,3)) #1687 are all the vertices. Code to only go this far, Index 0 = v
+objSimpDF = pd.DataFrame(objSimpArray, columns = ['X','Y','Z'])
 #vertexnum = len(objArray) # Function could be here
 
-print(f"OBJ has {len(objArray)} vertices")
+print(f"Simp OBJ has {len(objArray)} vertices")
+
+print(f"Baseline: Mean of X coordinates =", {objBaseDF['X'].mean()})
+
+print(f"Simplification 16: Mean of X coordinates", {objSimpDF["X"].mean()})
+
 
 #For loop to print something?
 
@@ -38,5 +54,18 @@ print(f"OBJ has {len(objArray)} vertices")
 #objArray.plot()
 #plt.show()
 
+# Not Working
+
+def maxDiff(a):
+    vmin = a[0]
+    dmax = 0
+    for i in range(len(a)):
+        if (a[i] < vmin):
+            vmin = a[i]
+        elif (a[i] - vmin > dmax):
+            dmax = a[i] - vmin
+    return dmax
+
+maxDiff(objBaseArray)
 
 
