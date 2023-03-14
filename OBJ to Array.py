@@ -14,9 +14,8 @@ objFile = (r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\OBJ 
 base = os.path.splitext(objFile)[0]
 os.rename(objFile, base + ".txt")
 
-objArray = np.loadtxt(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\OBJ Arrays\SMEC16.txt", skiprows = (4), max_rows = (3000), usecols=(1,2,3))
+objArray = np.loadtxt(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\OBJ Arrays\SMEC16.txt", skiprows = (4), usecols=(1,2,3))
 print(len(objArray))
-print(objArray)
 
 # value : int
 
