@@ -5,15 +5,17 @@ import numpy as np
 #Sample faces at the total triangle count of the original mesh.
 
 ms = pym.MeshSet() # Creates a container where we can load our meshes into.
-ms.load_new_mesh(r'G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\Baselines\SMB.obj')
+ms.load_new_mesh('SMB.obj')
+#ms.load_new_mesh('SMD16.obj')
 
-baseline = pym.load_new_mesh('G:\Datasets\Paper_Simplification\Baseline\SM.obj')
-simp1 = pym.load_new_mesh('G:\Datasets\Paper_Simplification\Decimation\SMD\SMD16.obj')
+baseline = ms.current_mesh()
 
-samples = face_number(baseline)
-#Add all 16 meshes here.  
+print("Current mesh is: ", (ms.current_mesh_id()))
 
-pym.get_hausdorff_distance(baseline, simp1, savesample=True, sampleface=True, samplenum= (samples), maxdist = 50)
+samples = baseline.face_number()
+print(f"Current mesh has", samples, "faces")
 
+ms.get_hausdorff_distance(sampledmesh = 0, targetmesh = 1, savesample=True, sampleface=True, samplenum = (samples), maxdist = pym.Percentage(50))
 
 # ms.save_current_mesh? ???
+
