@@ -2,7 +2,7 @@ import os
 import shutil
 import numpy as np
 import pandas as pd
-import  matplotlib as plt
+import matplotlib as plt
 
 
 #objdir = ("Directory") #Directory for objs
@@ -53,6 +53,8 @@ print(f"Simplification 16: Mean of X coordinates", {objSimpDF["X"].mean()})
 
 #objArray.plot()
 #plt.show()
+
+objBaseDF[objBaseDF["X"] > 1]
 
 # Not Working
 
