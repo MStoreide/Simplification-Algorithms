@@ -8,6 +8,8 @@ To Do
 
 - Inspect ply files with Open3D
 
+- Import objs as csvs to the colorlab server.
+
 Done
 
 - Create virtual environments for each script. Py 3.10 for Open3D, 3.7 for PyMeshLab ✔
