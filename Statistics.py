@@ -34,6 +34,14 @@ objSimpArray = np.loadtxt(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simp
 objSimpDF = pd.DataFrame(objSimpArray, columns = ['X','Y','Z'])
 #vertexnum = len(objArray) # Function could be here
 
+
+haus = pd.read_csv('RDH.csv')
+print(haus) 
+
+
+
+
+
 print(f"Simp OBJ has {len(objSimpArray)} vertices")
 
 print(f"Baseline: Mean of X coordinates =", {objBaseDF['X'].mean()})
