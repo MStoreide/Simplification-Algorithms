@@ -35,11 +35,8 @@ objSimpDF = pd.DataFrame(objSimpArray, columns = ['X','Y','Z'])
 #vertexnum = len(objArray) # Function could be here
 
 
-haus = pd.read_csv('RDH.csv')
-print(haus) 
-
-
-
+#haus = pd.read_csv(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\OBJ Arrays\RDH.csv", usecols=(1,2,3))
+#print(haus) 
 
 
 print(f"Simp OBJ has {len(objSimpArray)} vertices")
@@ -61,35 +58,35 @@ def maxDiff(a):
 X_maxdiffbase = maxDiff(objBaseDF['X'])
 Y_maxdiffbase = maxDiff(objBaseDF['Y'])
 Z_maxdiffbase = maxDiff(objBaseDF['Z'])
-print("X max base = ", X_maxdiffbase)
-print("Y max base = ", Y_maxdiffbase)
-print("Z max base = ", Z_maxdiffbase)
+print("X difference max : base = ", X_maxdiffbase)
+print("Y difference max : base = ", Y_maxdiffbase)
+print("Z difference max : base = ", Z_maxdiffbase)
 
 X_maxdiffsimp = maxDiff(objSimpDF['X'])
 Y_maxdiffsimp = maxDiff(objSimpDF['Y'])
 Z_maxdiffsimp = maxDiff(objSimpDF['Z'])
-print("X max simp = ", X_maxdiffsimp)
-print("Y max simp = ", Y_maxdiffsimp)
-print("Z max difference simp = ", Z_maxdiffsimp)
+print("X max difference : simp = ", X_maxdiffsimp)
+print("Y max difference : simp = ", Y_maxdiffsimp)
+print("Z max difference : simp = ", Z_maxdiffsimp)
 
 #Check differences in maxDiff
 
 if (X_maxdiffbase) == (X_maxdiffsimp):
     print("Max difference in X coordinates is equal to the baseline")
 else:
-    print("Difference in max difference of X coordinates from baseline =", X_maxdiffbase - X_maxdiffsimp)
+    print("Difference in max difference of X coordinates from baseline =", abs(X_maxdiffbase - X_maxdiffsimp))
     X_diff = X_maxdiffbase - X_maxdiffsimp
 
 if (Y_maxdiffbase) == (Y_maxdiffsimp):
     print("Max difference in Y coordinates is equal to the baseline")
 else:
-    print("Difference in max difference of Y coordinates from baseline =", Y_maxdiffbase - Y_maxdiffsimp)
+    print("Difference in max difference of Y coordinates from baseline =", abs(Y_maxdiffbase - Y_maxdiffsimp))
     Y_diff = Y_maxdiffbase - Y_maxdiffsimp
 
 if (Z_maxdiffbase) == (Z_maxdiffsimp):
     print("Max difference in Z coordinates is equal to the baseline")
 else:
-    print("Difference in max difference of Z coordinates from baseline =", Z_maxdiffbase - Z_maxdiffsimp)
+    print("Difference in max difference of Z coordinates from baseline =", abs(Z_maxdiffbase - Z_maxdiffsimp))
     Z_diff = Z_maxdiffbase - Z_maxdiffsimp
 
 
