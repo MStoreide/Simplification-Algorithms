@@ -1,12 +1,25 @@
 To Do
 - Write script for Blender Edge Collapse algorithm with bpy.
-- Implement PyMeshLab feature for Hausdorff distance. 
-- Implement Pandas for statistics right here instead of excel. 
 - Finish ImagePlot.py script
+- Rewrite simplification code as loops instead of brute forcing it for each object. 
 
-- Rewrite code as loops instead of brute forcing it for each object. 
+Data Management
+- Find solution for managing and accessing all data (Colorlab server?)
 
-- Inspect ply files with Open3D
+Hausdorff
+- Edit csv output to be dictionary of values, and not filter.
+- Rewrite as a function.
+
+Statistics
+- Import Hausdorff csvs from Hausdorff script
+- Create dataframes of data currently in Excell, either re-do or 
+- Map rate of change between simplification stages
+- Map rate of change between simplification algorithms
+- 
+- Create output format(Hausdorff, other values)
+
+
+- Inspect ply files with Open3D.
 
 - Import objs as csvs to the colorlab server.
 
@@ -16,3 +29,5 @@ Done
 - Get triangle counts for RM, SM, and UM Decimation. ✔
 - Run RM, SM, and UM versions of Open3D Decimation. ✔
 - Write Vertex Clustering script for Open3D. ✔
+- Implement Pandas for statistics right here instead of excel. ✔
+- Implement PyMeshLab feature for Hausdorff distance. ✔
