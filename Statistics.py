@@ -21,7 +21,7 @@ import pymeshlab as pym
 
 # Baseline object
 
-objBaseArray = np.loadtxt(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\OBJ Arrays\SMB.txt", skiprows = (4), max_rows=(16816), usecols=(1,2,3))
+objBaseArray = np.loadtxt(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\OBJ Arrays\NUMB.txt", skiprows = (4), max_rows=(261174), usecols=(1,2,3))
 objBaseDF = pd.DataFrame(objBaseArray, columns=['X', 'Y', 'Z'])
 
 print(f"Base OBJ has {len(objBaseArray)} vertices")
@@ -30,7 +30,7 @@ objBaseDF['X'].mean
 
 #Simplified
 
-objSimpArray = np.loadtxt(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\OBJ Arrays\SMEC16.txt", skiprows = (4), max_rows=(1687), usecols=(1,2,3)) #1687 are all the vertices. Code to only go this far, Index 0 = v
+objSimpArray = np.loadtxt(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\OBJ Arrays\NUMEC16.txt", skiprows = (4), max_rows=(26126), usecols=(1,2,3)) #1687 are all the vertices. Code to only go this far, Index 0 = v
 objSimpDF = pd.DataFrame(objSimpArray, columns = ['X','Y','Z'])
 #vertexnum = len(objArray) # Function could be here
 
@@ -53,33 +53,38 @@ def maxDiff(a):
 X_maxdiffbase = maxDiff(objBaseDF['X'])
 Y_maxdiffbase = maxDiff(objBaseDF['Y'])
 Z_maxdiffbase = maxDiff(objBaseDF['Z'])
-print("X max base = ", X_maxdiff)
-print("Y max base = ", Y_maxdiff)
-print("Z max base = ", Z_maxdiff)
+print("X max base = ", X_maxdiffbase)
+print("Y max base = ", Y_maxdiffbase)
+print("Z max base = ", Z_maxdiffbase)
 
 X_maxdiffsimp = maxDiff(objSimpDF['X'])
 Y_maxdiffsimp = maxDiff(objSimpDF['Y'])
 Z_maxdiffsimp = maxDiff(objSimpDF['Z'])
-print("X max simp = ", X_maxdiff)
-print("Y max simp = ", Y_maxdiff)
-print("Z max simp = ", Z_maxdiff)
+print("X max simp = ", X_maxdiffsimp)
+print("Y max simp = ", Y_maxdiffsimp)
+print("Z max difference simp = ", Z_maxdiffsimp)
 
 #Check differences in maxDiff
 
 if (X_maxdiffbase) == (X_maxdiffsimp):
     print("Max difference in X coordinates is equal to the baseline")
 else:
-    print("Max difference in X coordinates from baseline =", X_maxdiffbase - X_maxdiffsimp)
+    print("Difference in max difference of X coordinates from baseline =", X_maxdiffbase - X_maxdiffsimp)
     X_diff = X_maxdiffbase - X_maxdiffsimp
 
 if (Y_maxdiffbase) == (Y_maxdiffsimp):
     print("Max difference in Y coordinates is equal to the baseline")
 else:
-    print("Max difference in Y coordinates from baseline =", Y_maxdiffbase - Y_maxdiffsimp)
+    print("Difference in max difference of Y coordinates from baseline =", Y_maxdiffbase - Y_maxdiffsimp)
     Y_diff = Y_maxdiffbase - Y_maxdiffsimp
 
 if (Z_maxdiffbase) == (Z_maxdiffsimp):
     print("Max difference in Z coordinates is equal to the baseline")
 else:
-    print("Max difference in Z coordinates from baseline =", Z_maxdiffbase - Z_maxdiffsimp)
+    print("Difference in max difference of Z coordinates from baseline =", Z_maxdiffbase - Z_maxdiffsimp)
     Z_diff = Z_maxdiffbase - Z_maxdiffsimp
+
+
+# Segmentation
+
+objBaseDF.boxplot()
