@@ -11,17 +11,15 @@ Hausdorff
 - Rewrite as a function.
 
 Statistics
-- Import Hausdorff csvs from Hausdorff script
-- Create dataframes of data currently in Excell, either re-do or 
-- Map rate of change between simplification stages
-- Map rate of change between simplification algorithms
-- 
-- Create output format(Hausdorff, other values)
+- Import Hausdorff csvs from Hausdorff script.
+- Create dataframes of data currently in Excell, either re-do or.
+- Map rate of change between simplification stages.
+- Map rate of change between simplification algorithms.
+- Document xyz difference on different segments of the surface.
+- Create output format(Hausdorff, other values).
 
-
-- Inspect ply files with Open3D.
-
-- Import objs as csvs to the colorlab server.
+Open3D
+- Inspect ply files.
 
 Done
 
@@ -31,3 +29,4 @@ Done
 - Write Vertex Clustering script for Open3D. ✔
 - Implement Pandas for statistics right here instead of excel. ✔
 - Implement PyMeshLab feature for Hausdorff distance. ✔
+
