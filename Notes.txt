@@ -8,13 +8,16 @@ Data Management
 
 Hausdorff
 - Edit csv output to be dictionary of values, and not filter.
+- Add pd.DataFrame as filter output
 - Rewrite as a function.
+- 
 
 Statistics
 - Import Hausdorff csvs from Hausdorff script.
 - Create dataframes of data currently in Excell, either re-do or.
 - Map rate of change between simplification stages.
 - Map rate of change between simplification algorithms.
+- Implement segmentation for AoIs. For each mesh.
 - Document xyz difference on different segments of the surface.
 - Create output format(Hausdorff, other values).
 

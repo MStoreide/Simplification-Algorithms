@@ -85,6 +85,12 @@ else:
     Z_diff = Z_maxdiffbase - Z_maxdiffsimp
 
 
-# Segmentation
+# Plotting
 
 objBaseDF.boxplot()
+
+objBaseDF.plot(x='X', y='Y', style='o', markersize=0.5)
+objSimpDF.plot(x='X', y='Y', style='o', markersize=0.5)
+
+objBaseDF.plot(x='Y', y='Z', style='o', markersize=0.5 )
+objSimpDF.plot(x='Y', y='Z', style='o', markersize=0.5 )

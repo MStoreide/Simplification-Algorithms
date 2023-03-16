@@ -1,6 +1,7 @@
 import pymeshlab as pym
 import numpy as np
 import matplotlib as plt
+import pandas as pm
 
 #Using pymeshlab, we apply the Hausdorff distance filter to all meshes compared to the original (SM_Randomized).
 #Sample faces at the total triangle count of the original mesh.
