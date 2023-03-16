@@ -3,7 +3,7 @@ import open3d as o3d
 # Note that open3d requires version 3.10 of Python. 
 
 # Mesh needs to be manifold and triangulated.
-NUMbase = o3d.io.read_triangle_mesh(r"D:\Datasets\Paper_Simplification\Baselines\NUMB.obj") #NUMB is the baseline mesh for comparison. 
+NUMbase = o3d.io.read_triangle_mesh(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\Baselines\NUMB.obj") #NUMB is the baseline mesh for comparison. 
 NUMbase.compute_vertex_normals()
 print(NUMbase)
 
@@ -122,3 +122,9 @@ mesh_smp16 = NUMbase.simplify_quadric_decimation(
 )
 print("Simplification Stage 16 (5.623%*16 reduction): ", mesh_smp16)
 o3d.io.write_triangle_mesh(r"D:\Datasets\Paper_Simplification\Decimation\NUMD\NUMD16.obj", mesh_smp16)
+
+mesh_smp17 = NUMbase.simplify_quadric_decimation(
+    target_number_of_triangles=(int(totaltris*0.01))
+)
+print("Simplification Stage 17 (5.623%*16 reduction): ", mesh_smp17)
+o3d.io.write_triangle_mesh(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\Decimation\NUMD\NUMD17.obj", mesh_smp17)

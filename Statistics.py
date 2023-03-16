@@ -75,27 +75,34 @@ if (X_maxdiffbase) == (X_maxdiffsimp):
     print("Max difference in X coordinates is equal to the baseline")
 else:
     print("Difference in max difference of X coordinates from baseline =", abs(X_maxdiffbase - X_maxdiffsimp))
-    X_diff = X_maxdiffbase - X_maxdiffsimp
+    X_diff = abs(X_maxdiffbase - X_maxdiffsimp)
 
 if (Y_maxdiffbase) == (Y_maxdiffsimp):
     print("Max difference in Y coordinates is equal to the baseline")
 else:
     print("Difference in max difference of Y coordinates from baseline =", abs(Y_maxdiffbase - Y_maxdiffsimp))
-    Y_diff = Y_maxdiffbase - Y_maxdiffsimp
+    Y_diff = abs(Y_maxdiffbase - Y_maxdiffsimp)
 
 if (Z_maxdiffbase) == (Z_maxdiffsimp):
     print("Max difference in Z coordinates is equal to the baseline")
 else:
     print("Difference in max difference of Z coordinates from baseline =", abs(Z_maxdiffbase - Z_maxdiffsimp))
-    Z_diff = Z_maxdiffbase - Z_maxdiffsimp
+    Z_diff = abs(Z_maxdiffbase - Z_maxdiffsimp)
 
 
 # Plotting
 
 objBaseDF.boxplot()
+objSimpDF.boxplot()
 
 objBaseDF.plot(x='X', y='Y', style='o', markersize=0.5)
 objSimpDF.plot(x='X', y='Y', style='o', markersize=0.5)
 
 objBaseDF.plot(x='Y', y='Z', style='o', markersize=0.5 )
 objSimpDF.plot(x='Y', y='Z', style='o', markersize=0.5 )
+
+#Segmentation
+
+#o3d has some solutions for both objs and plys
+#pymeshlab has solutions for plys
+#plot them into segmented dataframes
