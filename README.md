@@ -10,7 +10,7 @@ Python Version
 > Python 3.10
 
 Required Modules
-> open3d, pymeshlab, bpy, matplotlib, pandas, numpy
+> open3d, pymeshlab, bpy, matplotlib, pandas, numpy, polyscope
 
 ## Naming Conventions
 Files are named with abbreviations to limit the length. Full names are listed below.
