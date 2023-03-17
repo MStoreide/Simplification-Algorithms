@@ -14,8 +14,9 @@ Required Modules
 
 ## Naming Conventions
 Files are named with abbreviations to limit the length. Full names are listed below.
+Names are listed as : (ObjectName)(Manifold/NonManifold)(SimplificationAlgorithm)(Simplification Step)
 
-Example: NonUniformManifoldVertexClustering.obj = NUMVC.obj
+Example: NonUniformManifoldVertexClustering16.obj = NUMVC16.obj
 
 ### Object Names:
 
