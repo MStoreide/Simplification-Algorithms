@@ -20,13 +20,14 @@ Statistics
 - Implement segmentation for AoIs. For each mesh.
 - Document xyz difference on different segments of the surface.
 - Create output format(Hausdorff, other values).
+- Put Hausdorff code in Statistics.py?
 
 Open3D
 - Inspect ply files.
 
 Done
 
-- Create virtual environments for each script. Py 3.10 for Open3D, 3.7 for PyMeshLab ✔
+- Create virtual environments for each script. Py 3.10 for Open3D, 3.7 for PyMeshLab ✔ No longer necessary
 - Get triangle counts for RM, SM, and UM Decimation. ✔
 - Run RM, SM, and UM versions of Open3D Decimation. ✔
 - Write Vertex Clustering script for Open3D. ✔
