@@ -45,6 +45,11 @@ print(f"Baseline: Mean of X coordinates =", {objBaseDF['X'].mean()})
 
 print(f"Simplification 16: Mean of X coordinates", {objSimpDF["X"].mean()})
 
+
+# This function searches for the distance of the extremes for a coordinate within an object.
+
+print("Max Distances of the extremes for a coordinate within an object")
+
 def maxDiff(a):
     dmin = a[0]
     dmax = 0
