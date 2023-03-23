@@ -21,7 +21,14 @@ import pymeshlab as pym
 
 # Baseline object
 
+<<<<<<< HEAD
 objBaseArray = np.loadtxt(r"smb://forskning.it.ntnu.no/ntnu/ie/idi/colorlab/Personal/marksto/Paper_Simplification/OBJ_Arrays/NUMB.txt", skiprows = (4), max_rows=(261174), usecols=(1,2,3))
+=======
+objBaseArray = np.loadtxt(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\OBJ Arrays\NUMB.txt",
+                        skiprows = (4), 
+                        max_rows=(261174), 
+                        usecols=(1,2,3))
+>>>>>>> 9db1ef319063bd9e91b3e59ba6a3adc00d5d6f22
 objBaseDF = pd.DataFrame(objBaseArray, columns=['X', 'Y', 'Z'])
 
 print(f"Base OBJ has {len(objBaseArray)} vertices")
@@ -30,7 +37,14 @@ objBaseDF['X'].mean
 
 #Simplified
 
+<<<<<<< HEAD
 objSimpArray = np.loadtxt(r"smb://forskning.it.ntnu.no/ntnu/ie/idi/colorlab/Personal/marksto/Paper_Simplification/OBJ_Arrays/NUMEC16.txt", skiprows = (4), max_rows=(26126), usecols=(1,2,3)) #1687 are all the vertices. Code to only go this far, Index 0 = v
+=======
+objSimpArray = np.loadtxt(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\OBJ Arrays\NUMEC16.txt", 
+                        skiprows = (4),
+                        max_rows=(26126), 
+                        usecols=(1,2,3)) #1687 are all the vertices. Code to only go this far, Index 0 = v
+>>>>>>> 9db1ef319063bd9e91b3e59ba6a3adc00d5d6f22
 objSimpDF = pd.DataFrame(objSimpArray, columns = ['X','Y','Z'])
 #vertexnum = len(objArray) # Function could be here
 
