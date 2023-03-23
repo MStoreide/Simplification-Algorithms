@@ -1,14 +1,16 @@
+import tempfile
+from smb.SMBConnection import SMBConnection
 import open3d as o3d
 import pandas as pd
 import numpy as np
 
 print("Reading Point Cloud")
 
-pc = o3d.io.read_point_cloud(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\Metro Data\U PointClouds\UMD\UMD16.ply")
+#pc = o3d.io.read_point_cloud(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\Metro Data\U PointClouds\UMD\UMD16.ply")
 
-print(pc)
+#print(pc)
 
-plyarray = np.loadtxt(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\Metro Data\U PointClouds\UMD\UMD162.txt", skiprows = (18), usecols=(1, 2, 3, 7, 8, 9))
+plyarray = np.loadtxt(r"smb://forskning.it.ntnu.no/ntnu/ie/idi/colorlab/Personal/marksto/Paper_Simplification/OBJ_Arrays/SMEC16.txt", skiprows = (18), usecols=(1, 2, 3, 7, 8, 9))
 plyDF = pd.DataFrame(plyArray, columns = ['X','Y','Z', 'R', 'G', 'B'])
 
 #   Visualization of whole point cloud
