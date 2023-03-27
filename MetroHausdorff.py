@@ -35,6 +35,14 @@ print("Current mesh is: ", (ms.current_mesh_id()))
 samples = baseline.face_number()
 print(f"Current mesh has", samples, "faces")
 
+def haus(Mesh):
+    for mesh in Mesh:
+        sampledmesh = Mesh
+        ms.get_hausdorff_distance(sampledmesh = 16, targetmesh = 0, savesample=True, sampleface=True, samplenum = (samples), maxdist = pym.Percentage(50))
+        ms.save_filter_script()
+    return True
+
+
 #Hausdorff 1
 
 ms.get_hausdorff_distance(sampledmesh = 16, targetmesh = 0, savesample=True, sampleface=True, samplenum = (samples), maxdist = pym.Percentage(50))

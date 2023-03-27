@@ -48,20 +48,16 @@ objSimp7Array = np.loadtxt(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Sim
                         usecols=(1,2,3)) #1687 are all the vertices. Code to only go this far, Index 0 = v
 objSimp7DF = pd.DataFrame(objSimp7Array, columns = ['X','Y','Z'])
 #vertexnum = len(objArray) # Function could be here
-print(f"Simp1 OBJ has {len(objSimp7Array)} vertices")
+print(f"Simp7 OBJ has {len(objSimp7Array)} vertices")
 
-# Simplified object 17
+# Simplified object 16
 objSimp16Array = np.loadtxt(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\OBJ Arrays\NUMEC16.txt", 
                         skiprows = (4),
                         max_rows=(26126), 
                         usecols=(1,2,3)) #1687 are all the vertices. Code to only go this far, Index 0 = v
 objSimp16DF = pd.DataFrame(objSimp16Array, columns = ['X','Y','Z'])
 #vertexnum = len(objArray) # Function could be here
-print(f"Simp1 OBJ has {len(objSimp16Array)} vertices")
-
-
-
-
+print(f"Simp16 OBJ has {len(objSimp16Array)} vertices")
 
 ## General Information ##
 
@@ -103,7 +99,12 @@ def percor(DataFrame):
         percorcof = objBaseDF.corrwith(DataFrame, method='pearson')
     return percorcof
 
-print(percor(objSimp1DF))
+percor1 = percor(objSimp1DF)
+percor7 = percor(objSimp7DF)
+percor16 = percor(objSimp16DF)
+print(percor1, percor7, percor16)
+
+# Should plot these against each other
 
 # Spearman Correlations
 def sprcor(DataFrame):
@@ -111,8 +112,9 @@ def sprcor(DataFrame):
         sprcorcof = objBaseDF.corrwith(DataFrame, method='spearman')
     return sprcorcof
 
-print(sprcor(objSimp1DF))
+print(sprcor(objSimp1DF), sprcor(objSimp7DF), sprcor(objSimp16DF))
 
+# Should plot these against each other
 
 ## Max Difference ##
 
