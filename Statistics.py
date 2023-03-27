@@ -168,9 +168,16 @@ else:
 ## Min Difference ##
 
 #Similar to maxDiff, but returns the smallest distance. Usually 0.
+def minDiff(a):
+    dmin = a[0]
+    for i in range(len(a)): # See if it returns negative values. IF not, it does not work. 
+        if (a[i] > dmin):
+            dmin = a[i]
+    return dmin
 
-
-
+X_mindiffbase = minDiff(objBaseDF['X'])
+Y_mindiffbase = minDiff(objBaseDF['Y'])
+Z_mindiffbase = minDiff(objBaseDF['Z'])
 
 ## Segmentation ##
 
@@ -180,11 +187,17 @@ else:
 
 # XYZ Difference Segmentation
 
+#Google segmentation algorithms
+
 # XYZ Similarity Segmentation
 
 # RGB Segmentation from Hausdorff. Segments areas of high error.
 #haus = pd.read_csv(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\OBJ Arrays\RDH.csv", usecols=(1,2,3))
 #print(haus) 
+
+#Select the bluest vertex(the one witht the most error), and iterate outwards.
+#Can set threshold from there. Get colors from Meshlab slider. 
+#Overlap this data with the other segmentations to see similarities. 
 
 # Plotting
 
