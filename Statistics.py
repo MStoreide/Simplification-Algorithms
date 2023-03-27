@@ -69,6 +69,14 @@ print(f"Simplification 16: Median of Y coordinates", {objSimpDF["Y"].median()})
 print(f"Simplification 16: Median of Z coordinates", {objSimpDF["Z"].median()})
 
 # Pearson Correlations
+percorX = objBaseDF.corrwith(objSimpDF, axis=0, method="pearson")
+percorY = objBaseDF.corrwith(objSimpDF, axis=1, method="pearson")
+percorZ = objBaseDF.corrwith(objSimpDF, axis=2, method="pearson")
+
+# Spearman Correlations
+sprcorX = objBaseDF.corrwith(objSimpDF, axis=0, method="spearman")
+sprcorY = objBaseDF.corrwith(objSimpDF, axis=1, method="spearman")
+sprcorZ = objBaseDF.corrwith(objSimpDF, axis=2, method="spearman")
 
 
 ## Max Difference ##
