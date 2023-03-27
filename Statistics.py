@@ -19,11 +19,11 @@ import pymeshlab as pym
 #copyfile = os.rename(objFile, base + "Copy.obj")
 #os.rename(objFile, base + ".txt")
 
-## Object Information ##
+## ObjectLoading ##
 
 # Baseline object
 
-objBaseArray = np.loadtxt(r"smb://forskning.it.ntnu.no/ntnu/ie/idi/colorlab/Personal/marksto/Paper_Simplification/OBJ_Arrays/NUMB.txt", skiprows = (4), max_rows=(261174), usecols=(1,2,3))
+#objBaseArray = np.loadtxt(r"smb://forskning.it.ntnu.no/ntnu/ie/idi/colorlab/Personal/marksto/Paper_Simplification/OBJ_Arrays/NUMB.txt", skiprows = (4), max_rows=(261174), usecols=(1,2,3))
 objBaseArray = np.loadtxt(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\OBJ Arrays\NUMB.txt",
                         skiprows = (4), 
                         max_rows=(261174), 
@@ -32,66 +32,86 @@ objBaseDF = pd.DataFrame(objBaseArray, columns=['X', 'Y', 'Z'])
 
 print(f"Base OBJ has {len(objBaseArray)} vertices")
 
-objBaseDF['X'].mean
+# Simplified object 1
+objSimp1Array = np.loadtxt(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\OBJ Arrays\NUMEC1.txt", 
+                        skiprows = (4),
+                        max_rows=(246483), 
+                        usecols=(1,2,3))
+objSimp1DF = pd.DataFrame(objSimp1Array, columns = ['X','Y','Z'])
+#vertexnum = len(objArray) # Function could be here
+print(f"Simp1 OBJ has {len(objSimp1Array)} vertices")
 
-# Simplified object
+# Simplified object 7
+objSimp7Array = np.loadtxt(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\OBJ Arrays\NUMEC7.txt", 
+                        skiprows = (4),
+                        max_rows=(158340), 
+                        usecols=(1,2,3)) #1687 are all the vertices. Code to only go this far, Index 0 = v
+objSimp7DF = pd.DataFrame(objSimp7Array, columns = ['X','Y','Z'])
+#vertexnum = len(objArray) # Function could be here
+print(f"Simp1 OBJ has {len(objSimp7Array)} vertices")
 
-objSimpArray = np.loadtxt(r"smb://forskning.it.ntnu.no/ntnu/ie/idi/colorlab/Personal/marksto/Paper_Simplification/OBJ_Arrays/NUMEC16.txt", skiprows = (4), max_rows=(26126), usecols=(1,2,3)) #1687 are all the vertices. Code to only go this far, Index 0 = v
-objSimpArray = np.loadtxt(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\OBJ Arrays\NUMEC16.txt", 
+# Simplified object 17
+objSimp16Array = np.loadtxt(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\OBJ Arrays\NUMEC16.txt", 
                         skiprows = (4),
                         max_rows=(26126), 
                         usecols=(1,2,3)) #1687 are all the vertices. Code to only go this far, Index 0 = v
-objSimpDF = pd.DataFrame(objSimpArray, columns = ['X','Y','Z'])
+objSimp16DF = pd.DataFrame(objSimp16Array, columns = ['X','Y','Z'])
 #vertexnum = len(objArray) # Function could be here
-print(f"Simp OBJ has {len(objSimpArray)} vertices")
+print(f"Simp1 OBJ has {len(objSimp16Array)} vertices")
 
-#haus = pd.read_csv(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\OBJ Arrays\RDH.csv", usecols=(1,2,3))
-#print(haus) 
+
+
+
 
 ## General Information ##
 
+def means(DataFrame):
+    for column in DataFrame:
+        xmean = DataFrame["X"].mean()
+        ymean = DataFrame["Y"].mean()
+        zmean = DataFrame["Z"].mean()
+    return xmean, ymean, zmean
+
+def medians(DataFrame):
+    for column in DataFrame:
+        xmedian = DataFrame["X"].median()
+        ymedian = DataFrame["Y"].median()
+        zmedian = DataFrame["Z"].median()
+    return xmedian, ymedian, zmedian
+
+print(means(objBaseDF))
+
 # Baseline object
-meanBaseX = objBaseDF['X'].mean()
-meanBaseY = objBaseDF['Y'].mean()
-meanBaseZ = objBaseDF['Z'].mean()
-print(f"Baseline: Mean of X coordinates =", meanBaseX)
-print(f"Baseline: Mean of Y coordinates =", meanBaseY)
-print(f"Baseline: Mean of Z coordinates =", meanBaseZ)
+print(means(objBaseDF))
+print(medians(objBaseDF))
 
-medianBaseX = objBaseDF['X'].median()
-medianBaseY = objBaseDF['Y'].median()
-medianBaseZ = objBaseDF['Z'].median()
-print(f"Baseline: Median of x coordinates=", medianBaseX)
-print(f"Baseline: Median of Y coordinates=", medianBaseY)
-print(f"Baseline: Median of Z coordinates=", medianBaseZ)
+# Simplified Object 1
+print(means(objSimp1DF))
+print(medians(objSimp1DF))
 
-# Simplified Object
-meanSimpX = objSimpDF['X'].mean()
-meanSimpY = objSimpDF['Y'].mean()
-meanSimpZ = objSimpDF['Z'].mean()
-medianSimpX = objSimpDF['X'].median()
-medianSimpY = objSimpDF['Y'].median()
-medianSimpZ = objSimpDF['Z'].median()
-print(f"Simplification 16: Mean of X coordinates", meanSimpX)
-print(f"Simplification 16: Mean of Y coordinates", meanSimpY)
-print(f"Simplification 16: Mean of Z coordinates", meanSimpZ)
+# Simplified Object 7
+print(means(objSimp7DF))
+print(medians(objSimp7DF))
 
-medianSimpX = objSimpDF['X'].median()
-medianSimpY = objSimpDF['Y'].median()
-medianSimpZ = objSimpDF['Z'].median()
-print(f"Simplification 16: Median of X coordinates", medianSimpX)
-print(f"Simplification 16: Median of Y coordinates", medianSimpY)
-print(f"Simplification 16: Median of Z coordinates", medianSimpZ)
+# Simplified Object 16
+print(means(objSimp16DF))
+print(medians(objSimp16DF))
 
 # Pearson Correlations
-percorX = objBaseDF.corrwith(objSimpDF, axis=0, method="pearson")
-percorY = objBaseDF.corrwith(objSimpDF, axis=1, method="pearson")
-percorZ = objBaseDF.corrwith(objSimpDF, axis=2, method="pearson")
+def percor(DataFrame):
+    for column in DataFrame:
+        percorcof = objBaseDF.corrwith(DataFrame, method='pearson')
+    return percorcof
+
+print(percor(objSimp1DF))
 
 # Spearman Correlations
-sprcorX = objBaseDF.corrwith(objSimpDF, axis=0, method="spearman")
-sprcorY = objBaseDF.corrwith(objSimpDF, axis=1, method="spearman")
-sprcorZ = objBaseDF.corrwith(objSimpDF, axis=2, method="spearman")
+def sprcor(DataFrame):
+    for column in DataFrame:
+        sprcorcof = objBaseDF.corrwith(DataFrame, method='spearman')
+    return sprcorcof
+
+print(sprcor(objSimp1DF))
 
 
 ## Max Difference ##
@@ -116,27 +136,27 @@ print("X difference max : base = ", X_maxdiffbase)
 print("Y difference max : base = ", Y_maxdiffbase)
 print("Z difference max : base = ", Z_maxdiffbase)
 
-X_maxdiffsimp = maxDiff(objSimpDF['X'])
-Y_maxdiffsimp = maxDiff(objSimpDF['Y'])
-Z_maxdiffsimp = maxDiff(objSimpDF['Z'])
+X_maxdiffsimp = maxDiff(objSimp1DF['X'])
+Y_maxdiffsimp = maxDiff(objSimp1DF['Y'])
+Z_maxdiffsimp = maxDiff(objSimp1DF['Z'])
 print("X max difference : simp = ", X_maxdiffsimp)
 print("Y max difference : simp = ", Y_maxdiffsimp)
 print("Z max difference : simp = ", Z_maxdiffsimp)
 
 if (X_maxdiffbase) == (X_maxdiffsimp):
-    print("Max difference in X coordinates is equal to the baseline")
+    print("Max difference in X coordinates in objSimp1 is equal to the baseline")
 else:
     print("Difference in max difference of X coordinates from baseline =", abs(X_maxdiffbase - X_maxdiffsimp))
     X_diff = abs(X_maxdiffbase - X_maxdiffsimp)
 
 if (Y_maxdiffbase) == (Y_maxdiffsimp):
-    print("Max difference in Y coordinates is equal to the baseline")
+    print("Max difference in Y coordinates in objSimp1 is equal to the baseline")
 else:
     print("Difference in max difference of Y coordinates from baseline =", abs(Y_maxdiffbase - Y_maxdiffsimp))
     Y_diff = abs(Y_maxdiffbase - Y_maxdiffsimp)
 
 if (Z_maxdiffbase) == (Z_maxdiffsimp):
-    print("Max difference in Z coordinates is equal to the baseline")
+    print(f"Max difference in Z coordinates in objSimp1 is equal to the baseline")
 else:
     print("Difference in max difference of Z coordinates from baseline =", abs(Z_maxdiffbase - Z_maxdiffsimp))
     Z_diff = abs(Z_maxdiffbase - Z_maxdiffsimp)
@@ -161,7 +181,8 @@ else:
 # XYZ Similarity Segmentation
 
 # RGB Segmentation from Hausdorff. Segments areas of high error.
-
+#haus = pd.read_csv(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\OBJ Arrays\RDH.csv", usecols=(1,2,3))
+#print(haus) 
 
 # Plotting
 
