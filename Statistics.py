@@ -19,6 +19,8 @@ import pymeshlab as pym
 #copyfile = os.rename(objFile, base + "Copy.obj")
 #os.rename(objFile, base + ".txt")
 
+## Object Information ##
+
 # Baseline object
 
 objBaseArray = np.loadtxt(r"smb://forskning.it.ntnu.no/ntnu/ie/idi/colorlab/Personal/marksto/Paper_Simplification/OBJ_Arrays/NUMB.txt", skiprows = (4), max_rows=(261174), usecols=(1,2,3))
@@ -32,7 +34,7 @@ print(f"Base OBJ has {len(objBaseArray)} vertices")
 
 objBaseDF['X'].mean
 
-#Simplified
+# Simplified object
 
 objSimpArray = np.loadtxt(r"smb://forskning.it.ntnu.no/ntnu/ie/idi/colorlab/Personal/marksto/Paper_Simplification/OBJ_Arrays/NUMEC16.txt", skiprows = (4), max_rows=(26126), usecols=(1,2,3)) #1687 are all the vertices. Code to only go this far, Index 0 = v
 objSimpArray = np.loadtxt(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\OBJ Arrays\NUMEC16.txt", 
@@ -41,18 +43,32 @@ objSimpArray = np.loadtxt(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simp
                         usecols=(1,2,3)) #1687 are all the vertices. Code to only go this far, Index 0 = v
 objSimpDF = pd.DataFrame(objSimpArray, columns = ['X','Y','Z'])
 #vertexnum = len(objArray) # Function could be here
-
+print(f"Simp OBJ has {len(objSimpArray)} vertices")
 
 #haus = pd.read_csv(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\OBJ Arrays\RDH.csv", usecols=(1,2,3))
 #print(haus) 
 
+## General Information ##
 
-print(f"Simp OBJ has {len(objSimpArray)} vertices")
-
+# Baseline object
 print(f"Baseline: Mean of X coordinates =", {objBaseDF['X'].mean()})
+print(f"Baseline: Mean of Y coordinates =", {objBaseDF['Y'].mean()})
+print(f"Baseline: Mean of Z coordinates =", {objBaseDF['Z'].mean()})
 
+print(f"Baseline: Median of x coordinates=", {objBaseDF['X'].median()})
+print(f"Baseline: Median of Y coordinates=", {objBaseDF['Y'].median()})
+print(f"Baseline: Median of Z coordinates=", {objBaseDF['Z'].median()})
+
+# Simplified Object
 print(f"Simplification 16: Mean of X coordinates", {objSimpDF["X"].mean()})
+print(f"Simplification 16: Mean of Y coordinates", {objSimpDF["Y"].mean()})
+print(f"Simplification 16: Mean of Z coordinates", {objSimpDF["Z"].mean()})
 
+print(f"Simplification 16: Median of X coordinates", {objSimpDF["X"].median()})
+print(f"Simplification 16: Median of Y coordinates", {objSimpDF["Y"].median()})
+print(f"Simplification 16: Median of Z coordinates", {objSimpDF["Z"].median()})
+
+# Pearson Correlations
 
 
 ## Max Difference ##
@@ -106,6 +122,24 @@ else:
 
 ## Min Difference ##
 
+#Similar to maxDiff, but returns the smallest distance. Usually 0.
+
+
+
+
+## Segmentation ##
+
+#o3d has some solutions for both objs and plys
+#pymeshlab has solutions for plys
+#plot them into segmented dataframes
+
+# XYZ Difference Segmentation
+
+# XYZ Similarity Segmentation
+
+# RGB Segmentation from Hausdorff. Segments areas of high error.
+
+
 # Plotting
 
 objBaseDF.boxplot()
@@ -116,9 +150,3 @@ objSimpDF.plot(x='X', y='Y', style='o', markersize=0.5)
 
 objBaseDF.plot(x='Y', y='Z', style='o', markersize=0.5 )
 objSimpDF.plot(x='Y', y='Z', style='o', markersize=0.5 )
-
-#Segmentation
-
-#o3d has some solutions for both objs and plys
-#pymeshlab has solutions for plys
-#plot them into segmented dataframes
