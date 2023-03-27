@@ -51,22 +51,37 @@ print(f"Simp OBJ has {len(objSimpArray)} vertices")
 ## General Information ##
 
 # Baseline object
-print(f"Baseline: Mean of X coordinates =", {objBaseDF['X'].mean()})
-print(f"Baseline: Mean of Y coordinates =", {objBaseDF['Y'].mean()})
-print(f"Baseline: Mean of Z coordinates =", {objBaseDF['Z'].mean()})
+meanBaseX = objBaseDF['X'].mean()
+meanBaseY = objBaseDF['Y'].mean()
+meanBaseZ = objBaseDF['Z'].mean()
+print(f"Baseline: Mean of X coordinates =", meanBaseX)
+print(f"Baseline: Mean of Y coordinates =", meanBaseY)
+print(f"Baseline: Mean of Z coordinates =", meanBaseZ)
 
-print(f"Baseline: Median of x coordinates=", {objBaseDF['X'].median()})
-print(f"Baseline: Median of Y coordinates=", {objBaseDF['Y'].median()})
-print(f"Baseline: Median of Z coordinates=", {objBaseDF['Z'].median()})
+medianBaseX = objBaseDF['X'].median()
+medianBaseY = objBaseDF['Y'].median()
+medianBaseZ = objBaseDF['Z'].median()
+print(f"Baseline: Median of x coordinates=", medianBaseX)
+print(f"Baseline: Median of Y coordinates=", medianBaseY)
+print(f"Baseline: Median of Z coordinates=", medianBaseZ)
 
 # Simplified Object
-print(f"Simplification 16: Mean of X coordinates", {objSimpDF["X"].mean()})
-print(f"Simplification 16: Mean of Y coordinates", {objSimpDF["Y"].mean()})
-print(f"Simplification 16: Mean of Z coordinates", {objSimpDF["Z"].mean()})
+meanSimpX = objSimpDF['X'].mean()
+meanSimpY = objSimpDF['Y'].mean()
+meanSimpZ = objSimpDF['Z'].mean()
+medianSimpX = objSimpDF['X'].median()
+medianSimpY = objSimpDF['Y'].median()
+medianSimpZ = objSimpDF['Z'].median()
+print(f"Simplification 16: Mean of X coordinates", meanSimpX)
+print(f"Simplification 16: Mean of Y coordinates", meanSimpY)
+print(f"Simplification 16: Mean of Z coordinates", meanSimpZ)
 
-print(f"Simplification 16: Median of X coordinates", {objSimpDF["X"].median()})
-print(f"Simplification 16: Median of Y coordinates", {objSimpDF["Y"].median()})
-print(f"Simplification 16: Median of Z coordinates", {objSimpDF["Z"].median()})
+medianSimpX = objSimpDF['X'].median()
+medianSimpY = objSimpDF['Y'].median()
+medianSimpZ = objSimpDF['Z'].median()
+print(f"Simplification 16: Median of X coordinates", medianSimpX)
+print(f"Simplification 16: Median of Y coordinates", medianSimpY)
+print(f"Simplification 16: Median of Z coordinates", medianSimpZ)
 
 # Pearson Correlations
 percorX = objBaseDF.corrwith(objSimpDF, axis=0, method="pearson")
@@ -150,11 +165,11 @@ else:
 
 # Plotting
 
-objBaseDF.boxplot()
-objSimpDF.boxplot()
+#objBaseDF.boxplot()
+#objSimpDF.boxplot()
 
-objBaseDF.plot(x='X', y='Y', style='o', markersize=0.5)
-objSimpDF.plot(x='X', y='Y', style='o', markersize=0.5)
+#objBaseDF.plot(x='X', y='Y', style='o', markersize=0.5)
+#objSimpDF.plot(x='X', y='Y', style='o', markersize=0.5)
 
-objBaseDF.plot(x='Y', y='Z', style='o', markersize=0.5 )
-objSimpDF.plot(x='Y', y='Z', style='o', markersize=0.5 )
+#objBaseDF.plot(x='Y', y='Z', style='o', markersize=0.5 )
+#objSimpDF.plot(x='Y', y='Z', style='o', markersize=0.5 )
