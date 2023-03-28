@@ -102,7 +102,7 @@ def percor(DataFrame):
 percor1 = percor(objSimp1DF)
 percor7 = percor(objSimp7DF)
 percor16 = percor(objSimp16DF)
-print(percor1, percor7, percor16)
+print("Pearson Correlation Coefficients: ", "1:", percor1, "7:", percor7, "16:",percor16)
 
 # Should plot these against each other
 
@@ -112,7 +112,10 @@ def sprcor(DataFrame):
         sprcorcof = objBaseDF.corrwith(DataFrame, method='spearman')
     return sprcorcof
 
-print(sprcor(objSimp1DF), sprcor(objSimp7DF), sprcor(objSimp16DF))
+sprcor1 = sprcor(objSimp1DF)
+sprcor7 = sprcor(objSimp7DF)
+sprcor16 = sprcor(objSimp16DF)
+print("Spearman Correlation Coeffcients: ", "1:", sprcor1, "7:", sprcor7, "16:", sprcor16)
 
 # Should plot these against each other
 
