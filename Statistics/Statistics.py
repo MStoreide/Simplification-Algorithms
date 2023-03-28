@@ -5,6 +5,7 @@ import pandas as pd
 import matplotlib as plt
 import pymeshlab as pym
 
+## Converting OJBs to TXTs ##
 
 #objdir = ("Directory") #Directory for objs
 
@@ -59,7 +60,11 @@ objSimp16DF = pd.DataFrame(objSimp16Array, columns = ['X','Y','Z'])
 #vertexnum = len(objArray) # Function could be here
 print(f"Simp16 OBJ has {len(objSimp16Array)} vertices")
 
-## General Information ##
+## Load Hausdorff PLYS ##
+
+pd.DataFrame()
+
+## General Object Information ##
 
 def means(DataFrame):
     for column in DataFrame:
@@ -74,6 +79,9 @@ def medians(DataFrame):
         ymedian = DataFrame["Y"].median()
         zmedian = DataFrame["Z"].median()
     return xmedian, ymedian, zmedian
+
+objSimp16DF.plot(x='X')
+objBaseDF.plot(x='X')
 
 print(means(objBaseDF))
 
@@ -103,8 +111,6 @@ percor1 = percor(objSimp1DF)
 percor7 = percor(objSimp7DF)
 percor16 = percor(objSimp16DF)
 print("Pearson Correlation Coefficients: ", "1:", percor1, "7:", percor7, "16:",percor16)
-
-# Should plot these against each other
 
 # Spearman Correlations
 def sprcor(DataFrame):
@@ -211,4 +217,4 @@ Z_mindiffbase = minDiff(objBaseDF['Z'])
 #objSimpDF.plot(x='X', y='Y', style='o', markersize=0.5)
 
 #objBaseDF.plot(x='Y', y='Z', style='o', markersize=0.5 )
-#objSimpDF.plot(x='Y', y='Z', style='o', markersize=0.5 )
+#objSimp1DF.plot(x='Y', y='Z', style='o', markersize=0.5 )
