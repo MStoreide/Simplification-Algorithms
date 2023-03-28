@@ -80,8 +80,9 @@ def medians(DataFrame):
         zmedian = DataFrame["Z"].median()
     return xmedian, ymedian, zmedian
 
-objSimp16DF.plot(x='X')
-objBaseDF.plot(x='X')
+objSimp16DF.sort_values(by=['X'], ascending=True)
+objSimp16DF.plot.scatter(y='X', x='index', title='Simp 16 X', figsize=(10,10))
+#objBaseDF['X'].plot(x='X', markersize=0.01, title='Baseline X', figsize=(10,10))
 
 print(means(objBaseDF))
 
