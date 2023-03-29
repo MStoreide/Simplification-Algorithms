@@ -200,7 +200,7 @@ sprcor3 = sprcor(objSimp3DF)
 sprcor4 = sprcor(objSimp4DF)
 sprcor5 = sprcor(objSimp5DF)
 sprcor6 = sprcor(objSimp6DF)
-sprcor7 = sprcor(objSimp7DF)
+sprcor7 = sprcor(objSimp7DF) #Add the rest
 sprcor16 = sprcor(objSimp16DF)
 print("Spearman Correlation Coeffcients: ", 
                                 "1:", sprcor1,
@@ -209,7 +209,7 @@ print("Spearman Correlation Coeffcients: ",
                                 "4:", sprcor4,
                                 "5:", sprcor5,
                                 "6:", sprcor6, 
-                                "7:", sprcor7, 
+                                "7:", sprcor7,
                                 "16:", sprcor16)
 
 spearmansDF = pd.concat([sprcor1, sprcor2, sprcor3, sprcor4, sprcor5, sprcor6, sprcor7, sprcor16], axis=1)
