@@ -103,7 +103,7 @@ print(f"Simp6 OBJ has {len(objSimp6Array)} vertices")
 objSimp7Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMEC7.txt", 
                         skiprows = (4),
                         max_rows=(158340), 
-                        usecols=(1,2,3)) #1687 are all the vertices. Code to only go this far, Index 0 = v
+                        usecols=(1,2,3))
 objSimp7DF = pd.DataFrame(objSimp7Array, columns = ['X','Y','Z'])
 
 print(f"Simp7 OBJ has {len(objSimp7Array)} vertices")
@@ -112,7 +112,7 @@ print(f"Simp7 OBJ has {len(objSimp7Array)} vertices")
 objSimp16Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMEC16.txt", 
                         skiprows = (4),
                         max_rows=(26126), 
-                        usecols=(1,2,3)) #1687 are all the vertices. Code to only go this far, Index 0 = v
+                        usecols=(1,2,3))
 objSimp16DF = pd.DataFrame(objSimp16Array, columns = ['X','Y','Z'])
 
 print(f"Simp16 OBJ has {len(objSimp16Array)} vertices")
@@ -171,7 +171,7 @@ percor3 = percor(objSimp3DF)
 percor4 = percor(objSimp4DF)
 percor5 = percor(objSimp5DF)
 percor6 = percor(objSimp6DF)
-percor7 = percor(objSimp7DF)
+percor7 = percor(objSimp7DF) #Add the rest
 percor16 = percor(objSimp16DF)
 print("Pearson Correlation Coefficients: ",
                                 "1:", percor1,
@@ -183,7 +183,9 @@ print("Pearson Correlation Coefficients: ",
                                 "7:", percor7, 
                                 "16:",percor16)
 
-#Plot all of these
+pearsonsDF = pd.concat([percor1, percor2, percor3, percor4, percor5, percor6, percor7, percor16], axis=1)
+pearsonsXYZ = pearsonsDF.T
+pearsonsXYZ.plot(legend=True, subplots=True, title='Pearson Correlation Coefficients') #Check size
 #Shold also be summarized in a final dataframe.
 
 # Spearman Correlations
@@ -210,7 +212,10 @@ print("Spearman Correlation Coeffcients: ",
                                 "7:", sprcor7, 
                                 "16:", sprcor16)
 
-#Plot all of these
+spearmansDF = pd.concat([sprcor1, sprcor2, sprcor3, sprcor4, sprcor5, sprcor6, sprcor7, sprcor16], axis=1)
+spearmansXYZ = spearmansDF.T
+spearmansXYZ.plot(legend=True, subplots=True, title="Spearman Correlation Coefficients") #Check size
+
 #Shold also be summarized in a final dataframe.
 
 ## Max Difference ##

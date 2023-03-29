@@ -3,12 +3,10 @@ import numpy as np
 import matplotlib as plt
 import pandas as pd
 
-#Using pymeshlab, we apply the Hausdorff distance filter to all meshes compared to the original (SM_Randomized).
-#Sample faces at the total triangle count of the original mesh.
+#To change object, simply swap 'SMD' with the correct filename
 
-output_path = (r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Hausdorff_CSV\Hausdorff_CSV')
-
-ms = pym.MeshSet() # Creates a container where we can load our meshes into.
+# Creates a container where we can load our meshes into.
+ms = pym.MeshSet()
 
 ms.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD1.obj')
 ms.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD2.obj')
@@ -31,6 +29,7 @@ ms.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplificatio
 baseline = ms.current_mesh()
 print("Current mesh is: ", (ms.current_mesh_id()))
 
+#Sample faces at the total triangle count of the original mesh.
 samples = baseline.face_number()
 print(f"Current mesh has", samples, "faces")
 
@@ -70,8 +69,6 @@ haus14DF = pd.DataFrame.from_dict(haus14, orient='index', columns=['SMD14'])
 haus15DF = pd.DataFrame.from_dict(haus15, orient='index', columns=['SMD15'])
 haus16DF = pd.DataFrame.from_dict(haus16, orient='index', columns=['SMD16'])
 
-mergeDF = pd.concat([haus1DF, haus2DF, haus3DF, haus16DF])
-
 haus1DF['SMD2'] = haus2DF['SMD2'].values
 haus1DF['SMD3'] = haus3DF['SMD3'].values
 haus1DF['SMD4'] = haus4DF['SMD4'].values
@@ -88,4 +85,7 @@ haus1DF['SMD14'] = haus14DF['SMD14'].values
 haus1DF['SMD15'] = haus15DF['SMD15'].values
 haus1DF['SMD16'] = haus16DF['SMD16'].values
 
-hausDF = haus1DF
+hausDF = haus1DF.T
+
+hausDF.plot(legend=True, subplots=True, title='Hausdorff Values SMD')
+#Fix for better plots
