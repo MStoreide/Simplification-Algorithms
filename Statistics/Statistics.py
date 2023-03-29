@@ -6,12 +6,14 @@ import pandas as pd
 import matplotlib as plt
 import pymeshlab as pym
 
+# Filepaths are currently hardcoded, meaning that the user must change the directories before running
+
 ## Converting OJBs to TXTs ##
 
 # Copies *.obj's to *.txt directory
-src_dir = r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Vertex_Clustering\NUMVC"
-dst_dir = r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMVC_TXT"
-shutil.copy2(src_dir, dst_dir)
+#src_dir = r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Vertex_Clustering\NUMVC"
+dst_dir = r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMEC_TXT"
+#shutil.copy2(src_dir, dst_dir)
 
 # Converts copied *.obj's to *.txt's
 for filename in os.listdir(dst_dir):
@@ -21,14 +23,20 @@ for filename in os.listdir(dst_dir):
     newname = infilename.replace('.obj', '.txt')
     output = os.rename(infilename, newname)
 
+# Function for loading 
+
 ## ObjectLoading ##
 
 # Baseline object
 
-# Need to find way to only load vertices. Can also load everyting, and then filter out everything else but vertices.
+# Need to find way to only load vertices. Can also load everyting, and then filter out everything else but vertices. Rows starting with ONLY 'v'
 
-#objBaseArray = np.loadtxt(r"smb://forskning.it.ntnu.no/ntnu/ie/idi/colorlab/Personal/marksto/Paper_Simplification/OBJ_Arrays/NUMB.txt", skiprows = (4), max_rows=(261174), usecols=(1,2,3))
-objBaseArray = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMB.txt",
+#Baseline
+#objBaseArray = np.loadtxt(r"smb://forskning.it.ntnu.no/ntnu/ie/idi/colorlab/Personal/marksto/Paper_Simplification/OBJ_Arrays/NUMB.txt",
+#                          skiprows = (4), 
+#                          max_rows=(261174),
+#                          usecols=(1,2,3))
+objBaseArray = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMEC_TXT\NUMB.txt",
                         skiprows = (4), 
                         max_rows=(261174), 
                         usecols=(1,2,3))
@@ -37,13 +45,59 @@ objBaseDF = pd.DataFrame(objBaseArray, columns=['X', 'Y', 'Z'])
 print(f"Base OBJ has {len(objBaseArray)} vertices")
 
 # Simplified object 1
-objSimp1Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMEC1.txt", 
+objSimp1Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMEC_TXT\NUMEC1.txt", 
                         skiprows = (4),
                         max_rows=(246483), 
                         usecols=(1,2,3))
 objSimp1DF = pd.DataFrame(objSimp1Array, columns = ['X','Y','Z'])
 
 print(f"Simp1 OBJ has {len(objSimp1Array)} vertices")
+
+# Simplified object 2
+objSimp2Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMEC_TXT\NUMEC2.txt", 
+                        skiprows = (4),
+                        max_rows=(246483), 
+                        usecols=(1,2,3))
+objSimp2DF = pd.DataFrame(objSimp2Array, columns = ['X','Y','Z'])
+
+print(f"Simp1 OBJ has {len(objSimp2Array)} vertices")
+
+# Simplified object 3
+objSimp3Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMEC_TXT\NUMEC3.txt", 
+                        skiprows = (4),
+                        max_rows=(246483), 
+                        usecols=(1,2,3))
+objSimp3DF = pd.DataFrame(objSimp3Array, columns = ['X','Y','Z'])
+
+print(f"Simp1 OBJ has {len(objSimp3Array)} vertices")
+
+# Simplified object 4
+objSimp4Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMEC_TXT\NUMEC4.txt", 
+                        skiprows = (4),
+                        max_rows=(246483), 
+                        usecols=(1,2,3))
+objSimp4DF = pd.DataFrame(objSimp4Array, columns = ['X','Y','Z'])
+
+print(f"Simp1 OBJ has {len(objSimp4Array)} vertices")
+
+# Simplified object 5
+objSimp5Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMEC_TXT\NUMEC5.txt", 
+                        skiprows = (4),
+                        max_rows=(246483), 
+                        usecols=(1,2,3))
+objSimp5DF = pd.DataFrame(objSimp5Array, columns = ['X','Y','Z'])
+
+print(f"Simp1 OBJ has {len(objSimp5Array)} vertices")
+
+# Simplified object 6
+objSimp6Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMEC_TXT\NUMEC6.txt", 
+                        skiprows = (4),
+                        max_rows=(246483), 
+                        usecols=(1,2,3))
+objSimp6DF = pd.DataFrame(objSimp6Array, columns = ['X','Y','Z'])
+
+print(f"Simp6 OBJ has {len(objSimp6Array)} vertices")
+
 
 # Simplified object 7
 objSimp7Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMEC7.txt", 

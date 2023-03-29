@@ -23,7 +23,6 @@ Statistics
 - Create output format(Hausdorff, other values).
 - Put Hausdorff code in Statistics.py?
 
-
 Open3D
 - Inspect ply files.
 
