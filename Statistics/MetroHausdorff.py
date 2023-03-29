@@ -28,15 +28,11 @@ ms.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplificatio
 ms.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD16.obj')
 ms.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Baselines\SMB.obj')
 
-baseline = ms.current_mesh() #Fix this if creating a function
+baseline = ms.current_mesh()
 print("Current mesh is: ", (ms.current_mesh_id()))
 
 samples = baseline.face_number()
 print(f"Current mesh has", samples, "faces")
-
-def haus(Mesh):
-        ms.get_hausdorff_distance(sampledmesh = 16, targetmesh = (Mesh), savesample=True, sampleface=True, samplenum = (samples), maxdist = pym.Percentage(50))
- 
 
 #Hausdorff Distances
 haus1 = ms.get_hausdorff_distance(sampledmesh = 16, targetmesh = 0, savesample=True, sampleface=True, samplenum = (samples), maxdist = pym.Percentage(50))
