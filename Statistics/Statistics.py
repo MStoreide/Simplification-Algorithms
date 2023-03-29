@@ -1,4 +1,5 @@
 import os
+import sys
 import shutil
 import numpy as np
 import pandas as pd
@@ -7,25 +8,27 @@ import pymeshlab as pym
 
 ## Converting OJBs to TXTs ##
 
-#objdir = ("Directory") #Directory for objs
+# Copies *.obj's to *.txt directory
+src_dir = r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Vertex_Clustering\NUMVC"
+dst_dir = r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMVC_TXT"
+shutil.copy2(src_dir, dst_dir)
 
-#objdirlist os.listdir('objdir')
 
-# Copy obj to "Copy" directory, Rename original to .txt
-
-#objFile = (r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\OBJ Arrays\SMEC16.obj")
-#dst = ("G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\OBJ Arrays")
-#base = os.path.splitext(objFile)[0]
-#objCopy = shutil.copyfile(objFile, dst)
-#copyfile = os.rename(objFile, base + "Copy.obj")
-#os.rename(objFile, base + ".txt")
+# Converts copied *.obj's to *.txt's
+folder = r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMVC_TXT"
+for filename in os.listdir(folder):
+    infilename = os.path.join(folder,filename)
+    if not os.path.isfile(infilename): continue
+    oldbase = os.path.splitext(filename)
+    newname = infilename.replace('.obj', '.txt')
+    output = os.rename(infilename, newname)
 
 ## ObjectLoading ##
 
 # Baseline object
 
 #objBaseArray = np.loadtxt(r"smb://forskning.it.ntnu.no/ntnu/ie/idi/colorlab/Personal/marksto/Paper_Simplification/OBJ_Arrays/NUMB.txt", skiprows = (4), max_rows=(261174), usecols=(1,2,3))
-objBaseArray = np.loadtxt(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\OBJ Arrays\NUMB.txt",
+objBaseArray = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMB.txt",
                         skiprows = (4), 
                         max_rows=(261174), 
                         usecols=(1,2,3))
@@ -34,7 +37,7 @@ objBaseDF = pd.DataFrame(objBaseArray, columns=['X', 'Y', 'Z'])
 print(f"Base OBJ has {len(objBaseArray)} vertices")
 
 # Simplified object 1
-objSimp1Array = np.loadtxt(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\OBJ Arrays\NUMEC1.txt", 
+objSimp1Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMEC1.txt", 
                         skiprows = (4),
                         max_rows=(246483), 
                         usecols=(1,2,3))
@@ -43,7 +46,7 @@ objSimp1DF = pd.DataFrame(objSimp1Array, columns = ['X','Y','Z'])
 print(f"Simp1 OBJ has {len(objSimp1Array)} vertices")
 
 # Simplified object 7
-objSimp7Array = np.loadtxt(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\OBJ Arrays\NUMEC7.txt", 
+objSimp7Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMEC7.txt", 
                         skiprows = (4),
                         max_rows=(158340), 
                         usecols=(1,2,3)) #1687 are all the vertices. Code to only go this far, Index 0 = v
@@ -52,7 +55,7 @@ objSimp7DF = pd.DataFrame(objSimp7Array, columns = ['X','Y','Z'])
 print(f"Simp7 OBJ has {len(objSimp7Array)} vertices")
 
 # Simplified object 16
-objSimp16Array = np.loadtxt(r"G:\Markus_Folder\Business Backup\Datasets\Paper_Simplification\OBJ Arrays\NUMEC16.txt", 
+objSimp16Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMEC16.txt", 
                         skiprows = (4),
                         max_rows=(26126), 
                         usecols=(1,2,3)) #1687 are all the vertices. Code to only go this far, Index 0 = v
@@ -80,8 +83,8 @@ def medians(DataFrame):
         zmedian = DataFrame["Z"].median()
     return xmedian, ymedian, zmedian
 
-objSimp16DF.sort_values(by=['X'], ascending=True)
-objSimp16DF.plot.scatter(y='X', x='index', title='Simp 16 X', figsize=(10,10))
+#objSimp16DF.sort_values(by=['X'], ascending=True)
+#objSimp16DF.plot.scatter(y='X', x='index', title='Simp 16 X', figsize=(10,10))
 #objBaseDF['X'].plot(x='X', markersize=0.01, title='Baseline X', figsize=(10,10))
 
 print(means(objBaseDF))
