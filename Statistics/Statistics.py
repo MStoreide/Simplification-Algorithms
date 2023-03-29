@@ -13,11 +13,9 @@ src_dir = r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Verte
 dst_dir = r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMVC_TXT"
 shutil.copy2(src_dir, dst_dir)
 
-
 # Converts copied *.obj's to *.txt's
-folder = r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMVC_TXT"
-for filename in os.listdir(folder):
-    infilename = os.path.join(folder,filename)
+for filename in os.listdir(dst_dir):
+    infilename = os.path.join(dst_dir,filename)
     if not os.path.isfile(infilename): continue
     oldbase = os.path.splitext(filename)
     newname = infilename.replace('.obj', '.txt')
@@ -26,6 +24,8 @@ for filename in os.listdir(folder):
 ## ObjectLoading ##
 
 # Baseline object
+
+# Need to find way to only load vertices. Can also load everyting, and then filter out everything else but vertices.
 
 #objBaseArray = np.loadtxt(r"smb://forskning.it.ntnu.no/ntnu/ie/idi/colorlab/Personal/marksto/Paper_Simplification/OBJ_Arrays/NUMB.txt", skiprows = (4), max_rows=(261174), usecols=(1,2,3))
 objBaseArray = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMB.txt",
@@ -42,7 +42,7 @@ objSimp1Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Sim
                         max_rows=(246483), 
                         usecols=(1,2,3))
 objSimp1DF = pd.DataFrame(objSimp1Array, columns = ['X','Y','Z'])
-#vertexnum = len(objArray) # Function could be here
+
 print(f"Simp1 OBJ has {len(objSimp1Array)} vertices")
 
 # Simplified object 7
@@ -51,7 +51,7 @@ objSimp7Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Sim
                         max_rows=(158340), 
                         usecols=(1,2,3)) #1687 are all the vertices. Code to only go this far, Index 0 = v
 objSimp7DF = pd.DataFrame(objSimp7Array, columns = ['X','Y','Z'])
-#vertexnum = len(objArray) # Function could be here
+
 print(f"Simp7 OBJ has {len(objSimp7Array)} vertices")
 
 # Simplified object 16
@@ -60,7 +60,7 @@ objSimp16Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Si
                         max_rows=(26126), 
                         usecols=(1,2,3)) #1687 are all the vertices. Code to only go this far, Index 0 = v
 objSimp16DF = pd.DataFrame(objSimp16Array, columns = ['X','Y','Z'])
-#vertexnum = len(objArray) # Function could be here
+
 print(f"Simp16 OBJ has {len(objSimp16Array)} vertices")
 
 ## Load Hausdorff PLYS ##
