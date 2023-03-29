@@ -23,7 +23,7 @@ for filename in os.listdir(dst_dir):
     newname = infilename.replace('.obj', '.txt')
     output = os.rename(infilename, newname)
 
-# Function for loading 
+# Function for loading all txts to separate dataframes should be added
 
 ## ObjectLoading ##
 
@@ -56,7 +56,7 @@ print(f"Simp1 OBJ has {len(objSimp1Array)} vertices")
 # Simplified object 2
 objSimp2Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMEC_TXT\NUMEC2.txt", 
                         skiprows = (4),
-                        max_rows=(246483), 
+                        max_rows=(231793), 
                         usecols=(1,2,3))
 objSimp2DF = pd.DataFrame(objSimp2Array, columns = ['X','Y','Z'])
 
@@ -65,7 +65,7 @@ print(f"Simp1 OBJ has {len(objSimp2Array)} vertices")
 # Simplified object 3
 objSimp3Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMEC_TXT\NUMEC3.txt", 
                         skiprows = (4),
-                        max_rows=(246483), 
+                        max_rows=(217102), 
                         usecols=(1,2,3))
 objSimp3DF = pd.DataFrame(objSimp3Array, columns = ['X','Y','Z'])
 
@@ -74,7 +74,7 @@ print(f"Simp1 OBJ has {len(objSimp3Array)} vertices")
 # Simplified object 4
 objSimp4Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMEC_TXT\NUMEC4.txt", 
                         skiprows = (4),
-                        max_rows=(246483), 
+                        max_rows=(202412), 
                         usecols=(1,2,3))
 objSimp4DF = pd.DataFrame(objSimp4Array, columns = ['X','Y','Z'])
 
@@ -83,7 +83,7 @@ print(f"Simp1 OBJ has {len(objSimp4Array)} vertices")
 # Simplified object 5
 objSimp5Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMEC_TXT\NUMEC5.txt", 
                         skiprows = (4),
-                        max_rows=(246483), 
+                        max_rows=(187721), 
                         usecols=(1,2,3))
 objSimp5DF = pd.DataFrame(objSimp5Array, columns = ['X','Y','Z'])
 
@@ -92,7 +92,7 @@ print(f"Simp1 OBJ has {len(objSimp5Array)} vertices")
 # Simplified object 6
 objSimp6Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMEC_TXT\NUMEC6.txt", 
                         skiprows = (4),
-                        max_rows=(246483), 
+                        max_rows=(173031), 
                         usecols=(1,2,3))
 objSimp6DF = pd.DataFrame(objSimp6Array, columns = ['X','Y','Z'])
 
@@ -166,9 +166,25 @@ def percor(DataFrame):
     return percorcof
 
 percor1 = percor(objSimp1DF)
+percor2 = percor(objSimp2DF)
+percor3 = percor(objSimp3DF)
+percor4 = percor(objSimp4DF)
+percor5 = percor(objSimp5DF)
+percor6 = percor(objSimp6DF)
 percor7 = percor(objSimp7DF)
 percor16 = percor(objSimp16DF)
-print("Pearson Correlation Coefficients: ", "1:", percor1, "7:", percor7, "16:",percor16)
+print("Pearson Correlation Coefficients: ",
+                                "1:", percor1,
+                                "2:", percor2, 
+                                "3:", percor3, 
+                                "4:", percor4, 
+                                "5:", percor5, 
+                                "6:", percor6,  
+                                "7:", percor7, 
+                                "16:",percor16)
+
+#Plot all of these
+#Shold also be summarized in a final dataframe.
 
 # Spearman Correlations
 def sprcor(DataFrame):
@@ -177,11 +193,25 @@ def sprcor(DataFrame):
     return sprcorcof
 
 sprcor1 = sprcor(objSimp1DF)
+sprcor2 = sprcor(objSimp2DF)
+sprcor3 = sprcor(objSimp3DF)
+sprcor4 = sprcor(objSimp4DF)
+sprcor5 = sprcor(objSimp5DF)
+sprcor6 = sprcor(objSimp6DF)
 sprcor7 = sprcor(objSimp7DF)
 sprcor16 = sprcor(objSimp16DF)
-print("Spearman Correlation Coeffcients: ", "1:", sprcor1, "7:", sprcor7, "16:", sprcor16)
+print("Spearman Correlation Coeffcients: ", 
+                                "1:", sprcor1,
+                                "2:", sprcor2,
+                                "3:", sprcor3,
+                                "4:", sprcor4,
+                                "5:", sprcor5,
+                                "6:", sprcor6, 
+                                "7:", sprcor7, 
+                                "16:", sprcor16)
 
-# Should plot these against each other
+#Plot all of these
+#Shold also be summarized in a final dataframe.
 
 ## Max Difference ##
 
@@ -189,7 +219,7 @@ print("Max Distances of the extremes for a coordinate within an object")
 
 #This function searches for the distance of the extremes for a coordinate within an object.
 def maxDiff(a):
-    dmin = a[0]
+    dmin = a[0] # Need negative values for this
     dmax = 0
     for i in range(len(a)):
         if (a[i] < dmin):
@@ -238,13 +268,14 @@ else:
 def minDiff(a):
     dmin = a[0]
     for i in range(len(a)): # See if it returns negative values. IF not, it does not work. 
-        if (a[i] > dmin):
+        if (a[i] < dmin):
             dmin = a[i]
     return dmin
 
 X_mindiffbase = minDiff(objBaseDF['X'])
 Y_mindiffbase = minDiff(objBaseDF['Y'])
 Z_mindiffbase = minDiff(objBaseDF['Z'])
+print(X_mindiffbase, Y_mindiffbase, Z_mindiffbase)
 
 ## Segmentation ##
 
@@ -276,3 +307,8 @@ Z_mindiffbase = minDiff(objBaseDF['Z'])
 
 #objBaseDF.plot(x='Y', y='Z', style='o', markersize=0.5 )
 #objSimp1DF.plot(x='Y', y='Z', style='o', markersize=0.5 )
+
+
+
+## Finalized Dataframes ##
+#Final dataframe for each object, listing all information. PDF format?
