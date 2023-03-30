@@ -3,11 +3,12 @@ import numpy as np
 import matplotlib as plt
 import pandas as pd
 
-#To change object, simply swap 'SMD' with the correct filename
+#To change object, simply swap the file abbreviation with the correct filename
 
-# Creates a container where we can load our meshes into.
+# Creates a container where we can load our meshes into
 ms = pym.MeshSet()
 
+# Load all meshes, with the baseline at the end
 ms.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD1.obj')
 ms.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD2.obj')
 ms.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD3.obj')
@@ -33,7 +34,7 @@ print("Current mesh is: ", (ms.current_mesh_id()))
 samples = baseline.face_number()
 print(f"Current mesh has", samples, "faces")
 
-#Hausdorff Distances
+#Hausdorff Distances for each simplificaton stage
 haus1 = ms.get_hausdorff_distance(sampledmesh = 16, targetmesh = 0, savesample=True, sampleface=True, samplenum = (samples), maxdist = pym.Percentage(50))
 haus2 = ms.get_hausdorff_distance(sampledmesh = 16, targetmesh = 1, savesample=True, sampleface=True, samplenum = (samples), maxdist = pym.Percentage(50))
 haus3 = ms.get_hausdorff_distance(sampledmesh = 16, targetmesh = 2, savesample=True, sampleface=True, samplenum = (samples), maxdist = pym.Percentage(50))
@@ -51,7 +52,7 @@ haus14 = ms.get_hausdorff_distance(sampledmesh = 16, targetmesh = 13, savesample
 haus15 = ms.get_hausdorff_distance(sampledmesh = 16, targetmesh = 14, savesample=True, sampleface=True, samplenum = (samples), maxdist = pym.Percentage(50))
 haus16 = ms.get_hausdorff_distance(sampledmesh = 16, targetmesh = 15, savesample=True, sampleface=True, samplenum = (samples), maxdist = pym.Percentage(50))
 
-#Hausdoff Dataframes
+#Hausdoff Dataframes for each simplification stage
 haus1DF = pd.DataFrame.from_dict(haus1, orient='index', columns=['SMD1'])
 haus2DF = pd.DataFrame.from_dict(haus2, orient='index', columns=['SMD2'])
 haus3DF = pd.DataFrame.from_dict(haus3, orient='index', columns=['SMD3'])
@@ -69,6 +70,7 @@ haus14DF = pd.DataFrame.from_dict(haus14, orient='index', columns=['SMD14'])
 haus15DF = pd.DataFrame.from_dict(haus15, orient='index', columns=['SMD15'])
 haus16DF = pd.DataFrame.from_dict(haus16, orient='index', columns=['SMD16'])
 
+# Append the values from each simplification stage to the same dataframe. 
 haus1DF['SMD2'] = haus2DF['SMD2'].values
 haus1DF['SMD3'] = haus3DF['SMD3'].values
 haus1DF['SMD4'] = haus4DF['SMD4'].values
