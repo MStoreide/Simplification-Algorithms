@@ -428,6 +428,7 @@ haus1DF['SMD16'] = haus16DF['SMD16'].values
 hausDF = haus1DF.T
 print(hausDF)
 hausDF.plot(legend=True, subplots=True, title='Hausdorff Values SMD')
+
 #Fix for better plots
 
 

@@ -93,6 +93,22 @@ hausDF = haus1DF.T
 #hausDF.plot(legend=True, subplots=True, title='Hausdorff Values SMD')
 #Fix for better plots
 
-print(ms.__str__())
+#ms.set_current_mesh(20) #This works
+#ms.save_current_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\Test.ply')
 
-ms.show_polyscope()
+def vertexinfo(pointcloud):
+    for pointcloud in range(len(ms)):
+        vsa = ms.mesh(pointcloud).vertex_scalar_array()
+        vca = ms.mesh(pointcloud).vertex_color_array()
+        print(vsa)
+        print(vca)
+    return (vsa, vca)
+
+vertexinfo(19)
+
+#vq18s = ms.mesh(18).vertex_scalar_array()
+#vq18c = ms.mesh(18).vertex_color_array()
+
+
+
+#ms.show_polyscope()
