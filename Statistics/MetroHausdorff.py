@@ -27,6 +27,7 @@ ms.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplificatio
 ms.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD16.obj')
 ms.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Baselines\SMB.obj')
 
+
 baseline = ms.current_mesh()
 print("Current mesh is: ", (ms.current_mesh_id()))
 
@@ -89,5 +90,9 @@ haus1DF['SMD16'] = haus16DF['SMD16'].values
 
 hausDF = haus1DF.T
 
-hausDF.plot(legend=True, subplots=True, title='Hausdorff Values SMD')
+#hausDF.plot(legend=True, subplots=True, title='Hausdorff Values SMD')
 #Fix for better plots
+
+print(ms.__str__())
+
+ms.show_polyscope()

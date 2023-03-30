@@ -11,6 +11,7 @@ import pymeshlab as pym
 
 
 # This file includes code from several different scripts, utilizing all functions in the same environment. 
+# I can then make changes to individual scripts without working in this environment
 # - Hausdorff distances from MetroHausdorff.py
 # - PLY Inspections from PLYInspection.py
 
@@ -430,6 +431,8 @@ hausDF.plot(legend=True, subplots=True, title='Hausdorff Values SMD')
 #Fix for better plots
 
 
+#Meshset for loading Hausdorff PLYs
+plyms = pym.MeshSet()
 
 
 

@@ -152,12 +152,19 @@ This projects makes use of a lot of great open-source software, so please make s
   DOI       = {10.2312/LocalChapterEvents/ItalChap/ItalianChapConf2008/129-136}
 }
 
- **Blender License**
+**Blender License**
 > The source code we develop at blender.org is default being licensed as GNU GPL Version 2 or later. 
   Some modules we make are using more permissive licenses, though, for example, the Blender Cycles rendering engine is available as Apache 2.0.
   Blender also uses many modules or libraries from other projects. For example, Python uses the Python License; Bullet uses the Zlib License; Libmv uses the MIT License; and OSL, a BSD License. 
   All the components that together make Blender are compatible under the newer GNU GPL Version 3 or later. That is also the license to use for any distribution of Blender binaries. 
 
+**Polyscope Citation**
+ >@misc{polyscope,
+  title = {Polyscope},
+  author = {Nicholas Sharp and others},
+  note = {www.polyscope.run},
+  year = {2019}
+}
   # Contact
 
   Markus Sebastian Bakken Storeide (markus.s.b.storeide@ntnu.no)
