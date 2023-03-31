@@ -5,6 +5,7 @@ import numpy as np
 import pandas as pd
 import matplotlib as plt
 import pymeshlab as pym
+import open3d as o3d
 
 ## Introduction ##
 #################################################################################################################
@@ -15,7 +16,7 @@ import pymeshlab as pym
 # - Hausdorff distances from MetroHausdorff.py
 # - PLY Inspections from PLYInspection.py
 
-# It also relies on data created from other scripts, primarily the simplification algorithms.abs(x)
+# It also relies on data created from other scripts, primarily the simplification algorithms.
 # Filepaths are currently hardcoded, meaning that the user must change the directories before running
 
 

@@ -5,11 +5,10 @@ To Do
 
 Data Management
 - Find solution for managing and accessing all data (Colorlab server?)
-- Reexport all point clouds without binary encoding. 
+- Reexport all Hausdorff point clouds without binary encoding. 
 
 Hausdorff
 - Rewrite as a function.
-
 
 Statistics
 - Map rate of change between simplification stages.
