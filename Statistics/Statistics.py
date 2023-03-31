@@ -433,8 +433,6 @@ hausDF.plot(legend=True, subplots=True, title='Hausdorff Values SMD')
 #Fix for better plots
 
 
-#Meshset for loading Hausdorff PLYs
-plyms = pym.MeshSet()
 
 
 

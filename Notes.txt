@@ -5,7 +5,7 @@ To Do
 
 Data Management
 - Find solution for managing and accessing all data (Colorlab server?)
-- Reexport all Hausdorff point clouds without binary encoding. 
+- Reexport all Hausdorff point clouds without binary encoding. Make them available as PLYs
 
 Hausdorff
 - Rewrite as a function.
@@ -13,12 +13,11 @@ Hausdorff
 Statistics
 - Map rate of change between simplification stages.
 - Map rate of change between simplification algorithms.
-- Implement segmentation for AoIs. For each mesh.
-- Document xyz difference on different segments of the surface.
-- Put Hausdorff code in Statistics.py?
+- Implement segmentation for AoIs. For each mesh. Based on XYZ or RGB?
 
 Open3D
 - Inspect ply files.
+- Document xyz difference on different segments of the surface.
 
 Done
 
@@ -33,3 +32,5 @@ Done
 - Import Hausdorff csvs from Hausdorff script. ✔
 - Create dataframes of data currently in Excell, either re-do or. ✔
 - Create output format(Hausdorff, other values). ✔
+- PLY Segmentation based on planes. ✔
+- Put Hausdorff code in Statistics.py ✔

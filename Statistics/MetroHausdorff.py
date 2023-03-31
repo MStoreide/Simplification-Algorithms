@@ -88,13 +88,14 @@ haus1DF['SMD14'] = haus14DF['SMD14'].values
 haus1DF['SMD15'] = haus15DF['SMD15'].values
 haus1DF['SMD16'] = haus16DF['SMD16'].values
 
+#Copy and Transpose the data into a new Dataframe
 hausDF = haus1DF.T
 
 #hausDF.plot(legend=True, subplots=True, title='Hausdorff Values SMD')
 #Fix for better plots
 
-#ms.set_current_mesh(20) #This works
-#ms.save_current_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\Test.ply')
+ms.set_current_mesh(18) #This works, just need to figure out the damn names
+ms.save_current_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Hausdorff_Script\HausSMD1.ply', binary=False)
 
 def vertexinfo(pointcloud):
     for pointcloud in range(len(ms)):
@@ -104,11 +105,23 @@ def vertexinfo(pointcloud):
         print(vca)
     return (vsa, vca)
 
-vertexinfo(19)
+# can we make it into a dataframe?
+
+MeshSet = pd.DataFrame(ms) #Does not give object names
+
+
+#vertexinfo(17)
 
 #vq18s = ms.mesh(18).vertex_scalar_array()
 #vq18c = ms.mesh(18).vertex_color_array()
 
-
+ms.set_verbosity(True)
+print(ms.print_status())
 
 #ms.show_polyscope()
+
+# Loading PLYs again
+
+HausPLY1 = pd.read(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Hausdorff_Script\HausSMD1.ply', 
+                        columns = ['X','Y','Z', 'R', 'G' 'B', 'Alpha', 'Quality']
+                        )
