@@ -14,6 +14,13 @@ Statistics
 - Map rate of change between simplification stages.
 - Map rate of change between simplification algorithms.
 - Implement segmentation for AoIs. For each mesh. Based on XYZ or RGB?
+- Extract parameters from objects and insert in dataframe: Object Information
+                        - Mean Triangle size
+                        - Max Triangle size
+                        - Min Triangle size
+                        - Number of triangles
+                        - Vertex qualities (From Hausdorff?)
+                        - Mesh Complexity (From convex hull - bounding box? NO)
 
 Open3D
 - Inspect ply files.
