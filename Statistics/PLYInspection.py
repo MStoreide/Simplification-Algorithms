@@ -14,7 +14,7 @@ import numpy as np
 
 print("Reading Point Cloud")
 
-#This could read automatically from where we save the Hausdorff PLYs in Statistics.py
+#This could read automatically from where we save the Hausdorff PLYs in Statistics.py. THESE ARE THE HAUSDORFF PLYS
 pc = o3d.io.read_point_cloud(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Metro Data (Manual)\U PointClouds\UMD\UMD16.ply")
 assert (pc.has_normals())
 
@@ -78,19 +78,27 @@ print(f"Plane equation: {a:.2f}x + {b:.2f}y + {c:.2f}z + {d:.2f} = 0")
 inlier_cloud = pc_planes.select_by_index(inliers)
 inlier_cloud.paint_uniform_color([0, 0, 0]) # Colors the plane black, since point cloud already has RGB colors
 outlier_cloud = pc_planes.select_by_index(inliers, invert=True)
-#o3d.visualization.draw_geometries([inlier_cloud, outlier_cloud],
-#                                  zoom=0.8,
-#                                  front=[-0.4999, -0.1659, -0.8499],
-#                                  lookat=[2.1813, 2.0619, 2.0999],
-#                                  up=[0.1204, -0.9852, 0.1215])
+o3d.visualization.draw_geometries([inlier_cloud, outlier_cloud],
+                                  zoom=0.8,
+                                  front=[-0.4999, -0.1659, -0.8499],
+                                  lookat=[2.1813, 2.0619, 2.0999],
+                                  up=[0.1204, -0.9852, 0.1215])
+
+
+
 
 
 ## Calculate Chamfer Distance ##
+###############################################################################################################
 
-#def chamf_dist(pointcloud):
-#    dist = pointcloud.compute_point_cloud_distance()
+#def compute_chamf_dist(pointcloud):
+#    chamf_dist = pointcloud.compute_point_cloud_distance(pc)
+#    chamf_dist = pd.DataFrame(chamf_dist)
+#    return chamf_dist
 
-#print(dist)
+
+#chamf = compute_chamf_dist(pc)
+#print(chamf)
 
 # COMPARE CHAMFER DISTANCE to HAUSDORFF
 

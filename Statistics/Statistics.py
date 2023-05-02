@@ -462,7 +462,6 @@ hausDF.plot(legend=True, subplots=True, title='Hausdorff Values SMD')
 #Fix for better plots
 
 
-ms_SMD.__str__
 
 
 
