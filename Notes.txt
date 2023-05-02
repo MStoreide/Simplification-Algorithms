@@ -21,6 +21,7 @@ Statistics
                         - Number of triangles
                         - Vertex qualities (From Hausdorff?)
                         - Mesh Complexity (From convex hull - bounding box? NO)
+- Make a checklist in the script to make sure everything is processed. 
 
 Open3D
 - Inspect ply files.

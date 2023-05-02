@@ -19,11 +19,22 @@ import open3d as o3d
 # It also relies on data created from other scripts, primarily the simplification algorithms.
 # Filepaths are currently hardcoded, meaning that the user must change the directories before running
 
+## Checklist ##
+#################################################################################################################
+# To check that everything is done, we follow this checklist. All start as false, and 
+
+checklist = {'Copy .objs as .txts' : 'False',
+            'Convert .txts to Dataframes' : 'False',
+            'Hausdorff for Decimation' : 'False'
+            
+}
+
 
 ## Converting OJBs to TXTs ##
 #################################################################################################################
 
 # Pandas does not allow us to work with *.OBJ files directly, but we can convert them to *.TXTs safely without loosing any information.
+# These can be read as dataframes. 
 
 # Copies *.obj's to *.txt directory
 #src_dir = r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Vertex_Clustering\NUMVC"
@@ -139,7 +150,7 @@ print(f"Simp16 OBJ has {len(objSimp16Array)} vertices")
 
 
 
-
+checklist['Convert .txts to Dataframes'] = 'True'
 
 
 
@@ -486,3 +497,7 @@ hausDF.plot(legend=True, subplots=True, title='Hausdorff Values SMD')
 
 ## Finalized Dataframes ##
 #Final dataframe for each object, listing all information. PDF format?
+
+
+print(checklist)
+# Separately print things that are still false in the checklist
