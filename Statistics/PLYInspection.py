@@ -92,6 +92,8 @@ outlier_cloud = pc_planes.select_by_index(inliers, invert=True)
 
 #print(dist)
 
+# COMPARE CHAMFER DISTANCE to HAUSDORFF
+
 #o3d.visualization.draw_geometries([pc],
 #                                  zoom=0.3412,
 #                                  front=[0.4257, -0.2125, -0.8795],

@@ -27,6 +27,11 @@ Open3D
 - Inspect ply files.
 - Document xyz difference on different segments of the surface.
 
+PLY Inspection
+- Implement Chamfer Distance function
+- Compare Chamfer distances to Hausdorff distances
+- Compare this again to the deviation from the baseline
+
 Done
 
 - Create virtual environments for each script. Py 3.10 for Open3D, 3.7 for PyMeshLab ✔ No longer necessary

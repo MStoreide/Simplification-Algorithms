@@ -93,7 +93,7 @@ SMD_haus1DF['SMD15'] = SMD_haus15DF['SMD15'].values
 SMD_haus1DF['SMD16'] = SMD_haus16DF['SMD16'].values
 
 #Copy and Transpose the data into a new Dataframe
-hausDF = haus1DF.T
+hausDF = SMD_haus1DF.T
 
 #hausDF.plot(legend=True, subplots=True, title='Hausdorff Values SMD')
 #Fix for better plots
@@ -101,6 +101,7 @@ hausDF = haus1DF.T
 ms_SMD.set_current_mesh(18) #This works, just need to figure out the damn names
 ms_SMD.save_current_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Hausdorff_Script\HausSMD1.ply', binary=False)
 
+# Look at this again? How does it work?
 def vertexinfo(pointcloud):
     for pointcloud in range(len(ms_SMD)):
         vsa = ms_SMD.mesh(pointcloud).vertex_scalar_array()
@@ -109,14 +110,6 @@ def vertexinfo(pointcloud):
         print('Vertex Color Array:', vca)
     return (vsa, vca)
 
-vertexinfo(ms_SMD)
-
-# can we make it into a dataframe?
-
-MeshSet = pd.DataFrame(ms_SMD) #Does not give object names
-
-
-#vertexinfo(17)
 
 #vq18s = ms_SMD.mesh(18).vertex_scalar_array()
 #vq18c = ms_SMD.mesh(18).vertex_color_array()
@@ -131,3 +124,4 @@ ms_SMD.show_polyscope()
 # HausPLY1 = pd.read(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Hausdorff_Script\HausSMD1.ply', 
 #                        columns = ['X','Y','Z', 'R', 'G' 'B', 'Alpha', 'Quality']
 #                        )
+ms_SMD.__str__
