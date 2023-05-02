@@ -25,7 +25,12 @@ import open3d as o3d
 
 checklist = {'Copy .objs as .txts' : 'False',
             'Convert .txts to Dataframes' : 'False',
-            'Hausdorff for Decimation' : 'False'
+            'Extract and Print General Object Info' : 'False',
+            'Pearson Correlations' : 'False',
+            'Spearman Correlations' : 'False',
+            'Hausdorff for Decimation' : 'False',
+
+
             
 }
 
@@ -67,11 +72,15 @@ for filename in os.listdir(dst_dir):
 #                          skiprows = (4), 
 #                          max_rows=(261174),
 #                          usecols=(1,2,3))
+
+obj_dataframes = []
 objBaseArray = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMEC_TXT\NUMB.txt",
                         skiprows = (4), 
                         max_rows=(261174), 
                         usecols=(1,2,3))
 objBaseDF = pd.DataFrame(objBaseArray, columns=['X', 'Y', 'Z'])
+
+obj_dataframes.Append[objBaseDF]
 
 print(f"Base OBJ has {len(objBaseArray)} vertices")
 
@@ -83,6 +92,7 @@ objSimp1Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Sim
 objSimp1DF = pd.DataFrame(objSimp1Array, columns = ['X','Y','Z'])
 
 print(f"Simp1 OBJ has {len(objSimp1Array)} vertices")
+obj_dataframes.Append(objSimp1DF)
 
 # Simplified object 2
 objSimp2Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMEC_TXT\NUMEC2.txt", 
@@ -92,6 +102,7 @@ objSimp2Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Sim
 objSimp2DF = pd.DataFrame(objSimp2Array, columns = ['X','Y','Z'])
 
 print(f"Simp1 OBJ has {len(objSimp2Array)} vertices")
+obj_dataframes.Append(objSimp2DF)
 
 # Simplified object 3
 objSimp3Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMEC_TXT\NUMEC3.txt", 
@@ -101,6 +112,7 @@ objSimp3Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Sim
 objSimp3DF = pd.DataFrame(objSimp3Array, columns = ['X','Y','Z'])
 
 print(f"Simp1 OBJ has {len(objSimp3Array)} vertices")
+obj_dataframes.Append(objSimp3DF)
 
 # Simplified object 4
 objSimp4Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMEC_TXT\NUMEC4.txt", 
@@ -110,6 +122,7 @@ objSimp4Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Sim
 objSimp4DF = pd.DataFrame(objSimp4Array, columns = ['X','Y','Z'])
 
 print(f"Simp1 OBJ has {len(objSimp4Array)} vertices")
+obj_dataframes.Append(objSim43DF)
 
 # Simplified object 5
 objSimp5Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMEC_TXT\NUMEC5.txt", 
@@ -119,6 +132,7 @@ objSimp5Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Sim
 objSimp5DF = pd.DataFrame(objSimp5Array, columns = ['X','Y','Z'])
 
 print(f"Simp1 OBJ has {len(objSimp5Array)} vertices")
+obj_dataframes.Append(objSimp5DF)
 
 # Simplified object 6
 objSimp6Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMEC_TXT\NUMEC6.txt", 
@@ -128,7 +142,7 @@ objSimp6Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Sim
 objSimp6DF = pd.DataFrame(objSimp6Array, columns = ['X','Y','Z'])
 
 print(f"Simp6 OBJ has {len(objSimp6Array)} vertices")
-
+obj_dataframes.Append(objSimp6DF)
 
 # Simplified object 7
 objSimp7Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMEC7.txt", 
@@ -138,6 +152,7 @@ objSimp7Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Sim
 objSimp7DF = pd.DataFrame(objSimp7Array, columns = ['X','Y','Z'])
 
 print(f"Simp7 OBJ has {len(objSimp7Array)} vertices")
+obj_dataframes.Append(objSimp7DF)
 
 # Simplified object 16
 objSimp16Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMEC16.txt", 
@@ -147,7 +162,7 @@ objSimp16Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Si
 objSimp16DF = pd.DataFrame(objSimp16Array, columns = ['X','Y','Z'])
 
 print(f"Simp16 OBJ has {len(objSimp16Array)} vertices")
-
+obj_dataframes.Append(objSimp16DF)
 
 
 checklist['Convert .txts to Dataframes'] = 'True'
@@ -156,7 +171,10 @@ checklist['Convert .txts to Dataframes'] = 'True'
 
 ## General Object Information ##
 #################################################################################################################
-
+#- Mean Triangle size
+#                        - Max Triangle size
+#                        - Min Triangle size
+#                        - Number of triangles
 #Means and Medians
 
 def means(DataFrame):
@@ -454,7 +472,13 @@ hausDF.plot(legend=True, subplots=True, title='Hausdorff Values SMD')
 ## PLY Inspection ##
 #################################################################################################################
 
-# Hausdorff PLYs
+
+
+
+
+
+
+
 
 
 ## Segmentation ##
