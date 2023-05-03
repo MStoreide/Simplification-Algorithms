@@ -245,8 +245,8 @@ pearsonsXYZ.plot(legend=True, subplots=True, title='Pearson Correlation Coeffici
 #Should also be summarized in a final dataframe.
 
 
-# Spearman Correlations
-def sprcor(DataFrame):
+# Spearman Correlations (Want to add a different method for getting the sprcor between each stage and its previous)
+def sprcor_baseline(DataFrame):
     for column in DataFrame:
         sprcorcof = objBaseDF.corrwith(DataFrame, method='spearman')
     return sprcorcof
