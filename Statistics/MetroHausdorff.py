@@ -3,59 +3,119 @@ import numpy as np
 import matplotlib as plt
 import pandas as pd
 
-#To change object, simply swap the file abbreviation with the correct filename
 
-# Creates a container where we can load our meshes into
-ms_SMD = pym.MeshSet()
-ms_SMEC = pym.MeshSet()
-ms_SMQEM = pym.MeshSet()
-ms_SMVC = pym.MeshSet()
-ms_SMCFM = pym.MeshSet()
+## Introduction ##
+#################################################################################################################
 
-# Load all SMD meshes, with the baseline at the end
-ms_SMD.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD1.obj')
-ms_SMD.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD2.obj')
-ms_SMD.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD3.obj')
-ms_SMD.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD4.obj')
-ms_SMD.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD5.obj')
-ms_SMD.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD6.obj')
-ms_SMD.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD7.obj')
-ms_SMD.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD8.obj')
-ms_SMD.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD9.obj')
-ms_SMD.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD10.obj')
-ms_SMD.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD11.obj')
-ms_SMD.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD12.obj')
-ms_SMD.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD13.obj')
-ms_SMD.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD14.obj')
-ms_SMD.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD15.obj')
-ms_SMD.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD16.obj')
-ms_SMD.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Baselines\SMB.obj')
+# This script calculates the Hausdorff distances between each simplification stage and its baseline, using the Metro tool from Meshlab.
+# All values are put into a Pandas dataframe, and are then joined in a single Pandas Dataframe. 
+# Filepaths are currently hardcoded, meaning that the user must change the directories before running
+
+# Load Meshes
+#################################################################################################################
+
+#To change object, simply swap the file abbreviation with the correct filename. E.g SM -> RM
+# MeshSet creates a container where we can load our meshes into.
+
+ms_D = pym.MeshSet() # Decimation Meshset
+ms_EC = pym.MeshSet() # Edge Collapse Meshset
+ms_QEM = pym.MeshSet() # Quadric Error Metrics Meshset
+ms_VC = pym.MeshSet() # Vertex Clustering Meshset
+ms_CFM = pym.MeshSet() # Coplanar Facets Merging Meshset
+
+# Load all Decimation meshes, with the baseline at the end
+ms_D.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD1.obj')
+ms_D.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD2.obj')
+ms_D.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD3.obj')
+ms_D.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD4.obj')
+ms_D.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD5.obj')
+ms_D.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD6.obj')
+ms_D.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD7.obj')
+ms_D.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD8.obj')
+ms_D.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD9.obj')
+ms_D.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD10.obj')
+ms_D.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD11.obj')
+ms_D.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD12.obj')
+ms_D.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD13.obj')
+ms_D.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD14.obj')
+ms_D.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD15.obj')
+ms_D.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Decimation\SMD\SMD16.obj')
+ms_D.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Baselines\SMB.obj')
+
+#Load all Edge Collapse meshes, with the baseline at the end
+ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC1.obj')
+ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC2.obj')
+ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC3.obj')
+ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC4.obj')
+ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC5.obj')
+ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC6.obj')
+ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC7.obj')
+ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC8.obj')
+ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC9.obj')
+ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC10.obj')
+ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC11.obj')
+ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC12.obj')
+ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC13.obj')
+ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC14.obj')
+ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC15.obj')
+ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC16.obj')
+ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Baselines\SMB.obj')
+
+#Load all Quadric Error Metrics meshes, with the baseline at the end
+ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM1.obj')
+ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM2.obj')
+ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM3.obj')
+ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM4.obj')
+ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM5.obj')
+ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM6.obj')
+ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM7.obj')
+ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM8.obj')
+ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM9.obj')
+ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM10.obj')
+ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM11.obj')
+ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM12.obj')
+ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM13.obj')
+ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM14.obj')
+ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM15.obj')
+ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM16.obj')
+ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Baselines\SMB.obj')
+
+#Load all Vertec Clustering meshes, with the baseline at the end
+
+#Load all Coplanar Facets Merging meshes, with the baseline at the end
 
 
-baseline = ms_SMD.current_mesh()
-print("Current mesh is: ", (ms_SMD.current_mesh_id()))
+
+
+
+
+# Calculate Hausdorff Distances
+#################################################################################################################
+
+baseline = ms_D.current_mesh()
+print("Current mesh is: ", (ms_D.current_mesh_id())) # Make sure that this is the baseline
 
 #Sample faces at the total triangle count of the original mesh.
 SMD_samples = baseline.face_number()
-print(f"Current mesh has", SMD_samples, "faces")
+print(f"Baseline mesh has", SMD_samples, "faces")
 
-#Hausdorff Distances for each simplificaton stage
-SMD_haus1 = ms_SMD.get_hausdorff_distance(sampledmesh = 16, targetmesh = 0, savesample=True, sampleface=True, samplenum = (SMD_samples), maxdist = pym.Percentage(50))
-SMD_haus2 = ms_SMD.get_hausdorff_distance(sampledmesh = 16, targetmesh = 1, savesample=True, sampleface=True, samplenum = (SMD_samples), maxdist = pym.Percentage(50))
-SMD_haus3 = ms_SMD.get_hausdorff_distance(sampledmesh = 16, targetmesh = 2, savesample=True, sampleface=True, samplenum = (SMD_samples), maxdist = pym.Percentage(50))
-SMD_haus4 = ms_SMD.get_hausdorff_distance(sampledmesh = 16, targetmesh = 3, savesample=True, sampleface=True, samplenum = (SMD_samples), maxdist = pym.Percentage(50))
-SMD_haus5 = ms_SMD.get_hausdorff_distance(sampledmesh = 16, targetmesh = 4, savesample=True, sampleface=True, samplenum = (SMD_samples), maxdist = pym.Percentage(50))
-SMD_haus6 = ms_SMD.get_hausdorff_distance(sampledmesh = 16, targetmesh = 5, savesample=True, sampleface=True, samplenum = (SMD_samples), maxdist = pym.Percentage(50))
-SMD_haus7 = ms_SMD.get_hausdorff_distance(sampledmesh = 16, targetmesh = 6, savesample=True, sampleface=True, samplenum = (SMD_samples), maxdist = pym.Percentage(50))
-SMD_haus8 = ms_SMD.get_hausdorff_distance(sampledmesh = 16, targetmesh = 7, savesample=True, sampleface=True, samplenum = (SMD_samples), maxdist = pym.Percentage(50))
-SMD_haus9 = ms_SMD.get_hausdorff_distance(sampledmesh = 16, targetmesh = 8, savesample=True, sampleface=True, samplenum = (SMD_samples), maxdist = pym.Percentage(50))
-SMD_haus10 = ms_SMD.get_hausdorff_distance(sampledmesh = 16, targetmesh = 9, savesample=True, sampleface=True, samplenum = (SMD_samples), maxdist = pym.Percentage(50))
-SMD_haus11 = ms_SMD.get_hausdorff_distance(sampledmesh = 16, targetmesh = 10, savesample=True, sampleface=True, samplenum = (SMD_samples), maxdist = pym.Percentage(50))
-SMD_haus12 = ms_SMD.get_hausdorff_distance(sampledmesh = 16, targetmesh = 11, savesample=True, sampleface=True, samplenum = (SMD_samples), maxdist = pym.Percentage(50))
-SMD_haus13 = ms_SMD.get_hausdorff_distance(sampledmesh = 16, targetmesh = 12, savesample=True, sampleface=True, samplenum = (SMD_samples), maxdist = pym.Percentage(50))
-SMD_haus14 = ms_SMD.get_hausdorff_distance(sampledmesh = 16, targetmesh = 13, savesample=True, sampleface=True, samplenum = (SMD_samples), maxdist = pym.Percentage(50))
-SMD_haus15 = ms_SMD.get_hausdorff_distance(sampledmesh = 16, targetmesh = 14, savesample=True, sampleface=True, samplenum = (SMD_samples), maxdist = pym.Percentage(50))
-SMD_haus16 = ms_SMD.get_hausdorff_distance(sampledmesh = 16, targetmesh = 15, savesample=True, sampleface=True, samplenum = (SMD_samples), maxdist = pym.Percentage(50))
+#Hausdorff Distances for each simplificaton stage. (Could be written as a For loop)
+SMD_haus1 = ms_D.get_hausdorff_distance(sampledmesh = 16, targetmesh = 0, savesample=True, sampleface=True, samplenum = (SMD_samples), maxdist = pym.Percentage(50))
+SMD_haus2 = ms_D.get_hausdorff_distance(sampledmesh = 16, targetmesh = 1, savesample=True, sampleface=True, samplenum = (SMD_samples), maxdist = pym.Percentage(50))
+SMD_haus3 = ms_D.get_hausdorff_distance(sampledmesh = 16, targetmesh = 2, savesample=True, sampleface=True, samplenum = (SMD_samples), maxdist = pym.Percentage(50))
+SMD_haus4 = ms_D.get_hausdorff_distance(sampledmesh = 16, targetmesh = 3, savesample=True, sampleface=True, samplenum = (SMD_samples), maxdist = pym.Percentage(50))
+SMD_haus5 = ms_D.get_hausdorff_distance(sampledmesh = 16, targetmesh = 4, savesample=True, sampleface=True, samplenum = (SMD_samples), maxdist = pym.Percentage(50))
+SMD_haus6 = ms_D.get_hausdorff_distance(sampledmesh = 16, targetmesh = 5, savesample=True, sampleface=True, samplenum = (SMD_samples), maxdist = pym.Percentage(50))
+SMD_haus7 = ms_D.get_hausdorff_distance(sampledmesh = 16, targetmesh = 6, savesample=True, sampleface=True, samplenum = (SMD_samples), maxdist = pym.Percentage(50))
+SMD_haus8 = ms_D.get_hausdorff_distance(sampledmesh = 16, targetmesh = 7, savesample=True, sampleface=True, samplenum = (SMD_samples), maxdist = pym.Percentage(50))
+SMD_haus9 = ms_D.get_hausdorff_distance(sampledmesh = 16, targetmesh = 8, savesample=True, sampleface=True, samplenum = (SMD_samples), maxdist = pym.Percentage(50))
+SMD_haus10 = ms_D.get_hausdorff_distance(sampledmesh = 16, targetmesh = 9, savesample=True, sampleface=True, samplenum = (SMD_samples), maxdist = pym.Percentage(50))
+SMD_haus11 = ms_D.get_hausdorff_distance(sampledmesh = 16, targetmesh = 10, savesample=True, sampleface=True, samplenum = (SMD_samples), maxdist = pym.Percentage(50))
+SMD_haus12 = ms_D.get_hausdorff_distance(sampledmesh = 16, targetmesh = 11, savesample=True, sampleface=True, samplenum = (SMD_samples), maxdist = pym.Percentage(50))
+SMD_haus13 = ms_D.get_hausdorff_distance(sampledmesh = 16, targetmesh = 12, savesample=True, sampleface=True, samplenum = (SMD_samples), maxdist = pym.Percentage(50))
+SMD_haus14 = ms_D.get_hausdorff_distance(sampledmesh = 16, targetmesh = 13, savesample=True, sampleface=True, samplenum = (SMD_samples), maxdist = pym.Percentage(50))
+SMD_haus15 = ms_D.get_hausdorff_distance(sampledmesh = 16, targetmesh = 14, savesample=True, sampleface=True, samplenum = (SMD_samples), maxdist = pym.Percentage(50))
+SMD_haus16 = ms_D.get_hausdorff_distance(sampledmesh = 16, targetmesh = 15, savesample=True, sampleface=True, samplenum = (SMD_samples), maxdist = pym.Percentage(50))
 
 #Hausdoff Dataframes for each simplification stage
 SMD_haus1DF = pd.DataFrame.from_dict(SMD_haus1, orient='index', columns=['SMD1'])
@@ -98,30 +158,38 @@ hausDF = SMD_haus1DF.T
 #hausDF.plot(legend=True, subplots=True, title='Hausdorff Values SMD')
 #Fix for better plots
 
-ms_SMD.set_current_mesh(18) #This works, just need to figure out the damn names
-ms_SMD.save_current_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Hausdorff_Script\HausSMD1.ply', binary=False)
+ms_D.set_current_mesh(18) #This works, just need to figure out the damn names
+
+
+
+
+
+
+# Export Distances as Point Clouds
+#################################################################################################################
+ms_D.save_current_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Hausdorff_Script\HausSMD1.ply', binary=False)
 
 # Look at this again? How does it work?
 def vertexinfo(pointcloud):
-    for pointcloud in range(len(ms_SMD)):
-        vsa = ms_SMD.mesh(pointcloud).vertex_scalar_array()
-        vca = ms_SMD.mesh(pointcloud).vertex_color_array()
+    for pointcloud in range(len(ms_D)):
+        vsa = ms_D.mesh(pointcloud).vertex_scalar_array()
+        vca = ms_D.mesh(pointcloud).vertex_color_array()
         print('Vertex Scalar Array:', vsa)
         print('Vertex Color Array:', vca)
     return (vsa, vca)
 
 
-#vq18s = ms_SMD.mesh(18).vertex_scalar_array()
-#vq18c = ms_SMD.mesh(18).vertex_color_array()
+#vq18s = ms_D.mesh(18).vertex_scalar_array()
+#vq18c = ms_D.mesh(18).vertex_color_array()
 
-ms_SMD.set_verbosity(True)
-print(ms_SMD.print_status())
+ms_D.set_verbosity(True)
+print(ms_D.print_status())
 
-ms_SMD.show_polyscope()
+ms_D.show_polyscope()
 
 # Loading PLYs again
 
 # HausPLY1 = pd.read(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Hausdorff_Script\HausSMD1.ply', 
 #                        columns = ['X','Y','Z', 'R', 'G' 'B', 'Alpha', 'Quality']
 #                        )
-ms_SMD.__str__
+ms_D.__str__
