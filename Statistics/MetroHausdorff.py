@@ -1,6 +1,5 @@
 import pymeshlab as pym
 import numpy as np
-import matplotlib as plt
 import pandas as pd
 
 
@@ -43,48 +42,80 @@ ms_D.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplificat
 ms_D.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Baselines\SMB.obj')
 
 #Load all Edge Collapse meshes, with the baseline at the end
-ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC1.obj')
-ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC2.obj')
-ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC3.obj')
-ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC4.obj')
-ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC5.obj')
-ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC6.obj')
-ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC7.obj')
-ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC8.obj')
-ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC9.obj')
-ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC10.obj')
-ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC11.obj')
-ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC12.obj')
-ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC13.obj')
-ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC14.obj')
-ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC15.obj')
-ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC16.obj')
-ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Baselines\SMB.obj')
+# ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC1.obj')
+# ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC2.obj')
+# ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC3.obj')
+# ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC4.obj')
+# ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC5.obj')
+# ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC6.obj')
+# ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC7.obj')
+# ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC8.obj')
+# ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC9.obj')
+# ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC10.obj')
+# ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC11.obj')
+# ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC12.obj')
+# ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC13.obj')
+# ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC14.obj')
+# ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC15.obj')
+# ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\EdgeCollapse\SMEC\SMEC16.obj')
+# ms_EC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Baselines\SMB.obj')
 
 #Load all Quadric Error Metrics meshes, with the baseline at the end
-ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM1.obj')
-ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM2.obj')
-ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM3.obj')
-ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM4.obj')
-ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM5.obj')
-ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM6.obj')
-ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM7.obj')
-ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM8.obj')
-ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM9.obj')
-ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM10.obj')
-ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM11.obj')
-ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM12.obj')
-ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM13.obj')
-ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM14.obj')
-ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM15.obj')
-ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM16.obj')
-ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Baselines\SMB.obj')
+# ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM1.obj')
+# ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM2.obj')
+# ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM3.obj')
+# ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM4.obj')
+# ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM5.obj')
+# ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM6.obj')
+# ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM7.obj')
+# ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM8.obj')
+# ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM9.obj')
+# ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM10.obj')
+# ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM11.obj')
+# ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM12.obj')
+# ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM13.obj')
+# ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM14.obj')
+# ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM15.obj')
+# ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\QuadricErrorMetrics\SMQEM\SMQEM16.obj')
+# ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Baselines\SMB.obj')
 
-#Load all Vertec Clustering meshes, with the baseline at the end
+#Load all Vertex Clustering meshes, with the baseline at the end
+# ms_VC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\VertexClustering\SMVC\SMVC1.obj')
+# ms_VC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\VertexClustering\SMVC\SMVC2.obj')
+# ms_VC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\VertexClustering\SMVC\SMVC3.obj')
+# ms_VC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\VertexClustering\SMVC\SMVC4.obj')
+# ms_VC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\VertexClustering\SMVC\SMVC5.obj')
+# ms_VC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\VertexClustering\SMVC\SMVC6.obj')
+# ms_VC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\VertexClustering\SMVC\SMVC7.obj')
+# ms_VC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\VertexClustering\SMVC\SMVC8.obj')
+# ms_VC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\VertexClustering\SMVC\SMVC9.obj')
+# ms_VC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\VertexClustering\SMVC\SMVC10.obj')
+# ms_VC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\VertexClustering\SMVC\SMVC11.obj')
+# ms_VC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\VertexClustering\SMVC\SMVC12.obj')
+# ms_VC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\VertexClustering\SMVC\SMVC13.obj')
+# ms_VC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\VertexClustering\SMVC\SMVC14.obj')
+# ms_VC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\VertexClustering\SMVC\SMVC15.obj')
+# ms_VC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\VertexClustering\SMVC\SMVC16.obj')
+# ms_VC.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Baselines\SMB.obj')
 
 #Load all Coplanar Facets Merging meshes, with the baseline at the end
-
-
+# ms_CFM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\CoplanarFacetsMerging\SMCFM\SMCFM1.obj')
+# ms_CFM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\CoplanarFacetsMerging\SMCFM\SMCFM2.obj')
+# ms_CFM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\CoplanarFacetsMerging\SMCFM\SMCFM3.obj')
+# ms_CFM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\CoplanarFacetsMerging\SMCFM\SMCFM4.obj')
+# ms_CFM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\CoplanarFacetsMerging\SMCFM\SMCFM5.obj')
+# ms_CFM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\CoplanarFacetsMerging\SMCFM\SMCFM6.obj')
+# ms_CFM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\CoplanarFacetsMerging\SMCFM\SMCFM7.obj')
+# ms_CFM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\CoplanarFacetsMerging\SMCFM\SMCFM8.obj')
+# ms_CFM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\CoplanarFacetsMerging\SMCFM\SMCFM9.obj')
+# ms_CFM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\CoplanarFacetsMerging\SMCFM\SMCFM10.obj')
+# ms_CFM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\CoplanarFacetsMerging\SMCFM\SMCFM11.obj')
+# ms_CFM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\CoplanarFacetsMerging\SMCFM\SMCFM12.obj')
+# ms_CFM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\CoplanarFacetsMerging\SMCFM\SMCFM13.obj')
+# ms_CFM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\CoplanarFacetsMerging\SMCFM\SMCFM14.obj')
+# ms_CFM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\CoplanarFacetsMerging\SMCFM\SMCFM15.obj')
+# ms_CFM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\CoplanarFacetsMerging\SMCFM\SMCFM16.obj')
+# ms_CFM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Baselines\SMB.obj')
 
 
 
@@ -92,6 +123,7 @@ ms_QEM.load_new_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplific
 # Calculate Hausdorff Distances
 #################################################################################################################
 
+## Decimation Meshset ##
 baseline = ms_D.current_mesh()
 print("Current mesh is: ", (ms_D.current_mesh_id())) # Make sure that this is the baseline
 
@@ -167,6 +199,7 @@ ms_D.set_current_mesh(18) #This works, just need to figure out the damn names
 
 # Export Distances as Point Clouds
 #################################################################################################################
+# Need to figure out which mesh is which, and then export everything
 ms_D.save_current_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Hausdorff_Script\HausSMD1.ply', binary=False)
 
 # Look at this again? How does it work?
