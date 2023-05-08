@@ -11,28 +11,10 @@ import open3d as o3d
 #################################################################################################################
 
 
-# This file includes code from several different scripts, utilizing all functions in the same environment. 
-# I can then make changes to individual scripts without working in this environment
-# - Hausdorff distances from MetroHausdorff.py
-# - PLY Inspections from PLYInspection.py
 
 # It also relies on data created from other scripts, primarily the simplification algorithms.
 # Filepaths are currently hardcoded, meaning that the user must change the directories before running
 
-## Checklist ##
-#################################################################################################################
-# To check that everything is done, we follow this checklist. All start as false, and 
-
-checklist = {'Copy .objs as .txts' : 'False',
-            'Convert .txts to Dataframes' : 'False',
-            'Extract and Print General Object Info' : 'False',
-            'Pearson Correlations' : 'False',
-            'Spearman Correlations' : 'False',
-            'Hausdorff for Decimation' : 'False',
-
-
-            
-}
 
 
 ## Converting OJBs to TXTs ##

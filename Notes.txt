@@ -32,8 +32,10 @@ PLY Inspection
 - Compare Chamfer distances to Hausdorff distances
 - Compare this again to the deviation from the baseline
 
-Add EVERYTHING to the same python file? That is A LOT in one file, but allows you to just import the baseline and noisy object.
-Can even automate the triangulation and noise as well. 
+When Done
+- Add EVERYTHING to the same python file? 
+(That is A LOT in one file, but allows you to just import the baseline and noisy object.)
+- Can even automate the triangulation and noise as well. 
 
 Done
 
