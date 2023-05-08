@@ -190,9 +190,9 @@ hausDF = SMD_haus1DF.T
 #hausDF.plot(legend=True, subplots=True, title='Hausdorff Values SMD')
 #Fix for better plots
 
-ms_D.set_current_mesh(18) #This works, just need to figure out the damn names
+# ms_D.set_current_mesh(18) #This works, just need to figure out the damn names
 
-
+ms_D.__getitem__(15)
 
 
 
@@ -200,23 +200,23 @@ ms_D.set_current_mesh(18) #This works, just need to figure out the damn names
 # Export Distances as Point Clouds
 #################################################################################################################
 # Need to figure out which mesh is which, and then export everything
-ms_D.save_current_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Hausdorff_Script\HausSMD1.ply', binary=False)
+# ms_D.save_current_mesh(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Hausdorff_Script\HausSMD1.ply', binary=False)
 
 # Look at this again? How does it work?
-def vertexinfo(pointcloud):
-    for pointcloud in range(len(ms_D)):
-        vsa = ms_D.mesh(pointcloud).vertex_scalar_array()
-        vca = ms_D.mesh(pointcloud).vertex_color_array()
-        print('Vertex Scalar Array:', vsa)
-        print('Vertex Color Array:', vca)
-    return (vsa, vca)
+# def vertexinfo(pointcloud):
+#     for pointcloud in range(len(ms_D)):
+#         vsa = ms_D.mesh(pointcloud).vertex_scalar_array()
+#         vca = ms_D.mesh(pointcloud).vertex_color_array()
+#         print('Vertex Scalar Array:', vsa)
+#         print('Vertex Color Array:', vca)
+#     return (vsa, vca)
 
 
 #vq18s = ms_D.mesh(18).vertex_scalar_array()
 #vq18c = ms_D.mesh(18).vertex_color_array()
 
 ms_D.set_verbosity(True)
-print(ms_D.print_status())
+print(ms_D.__str__())
 
 ms_D.show_polyscope()
 
@@ -225,4 +225,3 @@ ms_D.show_polyscope()
 # HausPLY1 = pd.read(r'G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\Hausdorff_Script\HausSMD1.ply', 
 #                        columns = ['X','Y','Z', 'R', 'G' 'B', 'Alpha', 'Quality']
 #                        )
-ms_D.__str__
