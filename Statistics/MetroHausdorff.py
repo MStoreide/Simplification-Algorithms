@@ -187,13 +187,12 @@ SMD_haus1DF['SMD16'] = SMD_haus16DF['SMD16'].values
 #Copy and Transpose the data into a new Dataframe
 hausDF = SMD_haus1DF.T
 
+latex = pd.DataFrame.to_latex(hausDF)
+print(latex)
 #hausDF.plot(legend=True, subplots=True, title='Hausdorff Values SMD')
 #Fix for better plots
 
 # ms_D.set_current_mesh(18) #This works, just need to figure out the damn names
-
-ms_D.__getitem__(15)
-
 
 
 

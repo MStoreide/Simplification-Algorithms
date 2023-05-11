@@ -55,14 +55,14 @@ for filename in os.listdir(dst_dir):
 #                          max_rows=(261174),
 #                          usecols=(1,2,3))
 
-obj_dataframes = []
+obj_dataframes = pd.DataFrame()
 objBaseArray = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMEC_TXT\NUMB.txt",
                         skiprows = (4), 
                         max_rows=(261174), 
                         usecols=(1,2,3))
 objBaseDF = pd.DataFrame(objBaseArray, columns=['X', 'Y', 'Z'])
 
-obj_dataframes.Append[objBaseDF]
+#obj_dataframes.Append[objBaseDF]
 
 print(f"Base OBJ has {len(objBaseArray)} vertices")
 
@@ -74,7 +74,7 @@ objSimp1Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Sim
 objSimp1DF = pd.DataFrame(objSimp1Array, columns = ['X','Y','Z'])
 
 print(f"Simp1 OBJ has {len(objSimp1Array)} vertices")
-obj_dataframes.Append(objSimp1DF)
+#obj_dataframes.Append(objSimp1DF)
 
 # Simplified object 2
 objSimp2Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMEC_TXT\NUMEC2.txt", 
@@ -84,7 +84,7 @@ objSimp2Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Sim
 objSimp2DF = pd.DataFrame(objSimp2Array, columns = ['X','Y','Z'])
 
 print(f"Simp1 OBJ has {len(objSimp2Array)} vertices")
-obj_dataframes.Append(objSimp2DF)
+#obj_dataframes.Append(objSimp2DF)
 
 # Simplified object 3
 objSimp3Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMEC_TXT\NUMEC3.txt", 
@@ -94,7 +94,7 @@ objSimp3Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Sim
 objSimp3DF = pd.DataFrame(objSimp3Array, columns = ['X','Y','Z'])
 
 print(f"Simp1 OBJ has {len(objSimp3Array)} vertices")
-obj_dataframes.Append(objSimp3DF)
+#obj_dataframes.Append(objSimp3DF)
 
 # Simplified object 4
 objSimp4Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMEC_TXT\NUMEC4.txt", 
@@ -104,7 +104,7 @@ objSimp4Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Sim
 objSimp4DF = pd.DataFrame(objSimp4Array, columns = ['X','Y','Z'])
 
 print(f"Simp1 OBJ has {len(objSimp4Array)} vertices")
-obj_dataframes.Append(objSim43DF)
+#obj_dataframes.Append(objSim43DF)
 
 # Simplified object 5
 objSimp5Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMEC_TXT\NUMEC5.txt", 
@@ -114,7 +114,7 @@ objSimp5Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Sim
 objSimp5DF = pd.DataFrame(objSimp5Array, columns = ['X','Y','Z'])
 
 print(f"Simp1 OBJ has {len(objSimp5Array)} vertices")
-obj_dataframes.Append(objSimp5DF)
+#obj_dataframes.Append(objSimp5DF)
 
 # Simplified object 6
 objSimp6Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMEC_TXT\NUMEC6.txt", 
@@ -124,7 +124,7 @@ objSimp6Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Sim
 objSimp6DF = pd.DataFrame(objSimp6Array, columns = ['X','Y','Z'])
 
 print(f"Simp6 OBJ has {len(objSimp6Array)} vertices")
-obj_dataframes.Append(objSimp6DF)
+#obj_dataframes.Append(objSimp6DF)
 
 # Simplified object 7
 objSimp7Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMEC7.txt", 
@@ -134,7 +134,7 @@ objSimp7Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Sim
 objSimp7DF = pd.DataFrame(objSimp7Array, columns = ['X','Y','Z'])
 
 print(f"Simp7 OBJ has {len(objSimp7Array)} vertices")
-obj_dataframes.Append(objSimp7DF)
+#obj_dataframes.Append(objSimp7DF)
 
 # Simplified object 16
 objSimp16Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Simplification\OBJ_Arrays\NUMEC16.txt", 
@@ -144,10 +144,8 @@ objSimp16Array = np.loadtxt(r"G:\Markus_Folder\Business_Backup\Datasets\Paper_Si
 objSimp16DF = pd.DataFrame(objSimp16Array, columns = ['X','Y','Z'])
 
 print(f"Simp16 OBJ has {len(objSimp16Array)} vertices")
-obj_dataframes.Append(objSimp16DF)
+#obj_dataframes.Append(objSimp16DF)
 
-
-checklist['Convert .txts to Dataframes'] = 'True'
 
 
 
@@ -228,7 +226,7 @@ pearsonsXYZ.plot(legend=True, subplots=True, title='Pearson Correlation Coeffici
 
 
 # Spearman Correlations (Want to add a different method for getting the sprcor between each stage and its previous)
-def sprcor_baseline(DataFrame):
+def sprcor(DataFrame):
     for column in DataFrame:
         sprcorcof = objBaseDF.corrwith(DataFrame, method='spearman')
     return sprcorcof
@@ -340,8 +338,17 @@ Z_mindiffbase = minDiff(objBaseDF['Z'])
 print(X_mindiffbase, Y_mindiffbase, Z_mindiffbase)
 
 
-
-
+# Object Statistic dataframe
+#    - Polys
+#    - vertices
+#    - B.B Diag
+#    - Mean xyz
+#    - Median xyz
+#    - Min xyz
+#    - Max xyz
+#    - percor xyz
+#    - sprcor xyz
+obj16DATA = pd.concat()
 
 ## Segmentation ##
 #################################################################################################################
@@ -384,6 +391,3 @@ print(X_mindiffbase, Y_mindiffbase, Z_mindiffbase)
 ## Finalized Dataframes ##
 #Final dataframe for each object, listing all information. PDF format?
 
-
-print(checklist)
-# Separately print things that are still false in the checklist
