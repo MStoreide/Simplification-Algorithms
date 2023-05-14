@@ -348,8 +348,12 @@ print(X_mindiffbase, Y_mindiffbase, Z_mindiffbase)
 #    - Max xyz
 #    - percor xyz
 #    - sprcor xyz
-obj16DATA = pd.concat()
+#    - avg edge length
+#    - max edge length (Use this to calculatesurface of each polygon)
+#    - min edge length
 
+objData = pd.DataFrame(columns=('Polygons', 'Vertices', 'Edges'), data=('1', '2', '3'))
+print(objData)
 ## Segmentation ##
 #################################################################################################################
 
